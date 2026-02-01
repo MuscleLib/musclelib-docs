@@ -1,0 +1,12 @@
+{
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/", "destination": "/en/index.html" },
+    { "source": "/docs", "destination": "/en/docs.html" },
+    { "source": "/en/docs", "destination": "/en/docs.html" },
+    { "source": "/pt/docs", "destination": "/pt/docs.html" },
+    { "source": "/en", "destination": "/en/index.html" },
+    { "source": "/pt", "destination": "/pt/index.html" },
+    { "source": "/404", "destination": "/404.html" }
+  ]
+}
