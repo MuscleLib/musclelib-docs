@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-translate="page.title">MuscleLib API Documentation</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/page/css/docs.css">
+  <link href="/page/css/start.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+  <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light docs-topbar">
+    <div class="container-fluid navbar-docs">
+      <div class="navbar-left">
+        <a class="navbar-brand docs-brand" href="/en/" aria-label="MuscleLib">
+          <img
+            src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-light="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769911366095.svg"
+            alt="MuscleLib logo"
+            class="brand-logo"
+          >
+        </a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Lang">
+            <i class="bi bi-translate"></i>
+            <span data-selected-flag><img src="/page/img/us.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end docs-dropdown" data-lang-select style="padding: 5px;">
+            <li>
+              <a class="dropdown-item" href="/pt/" data-lang="pt">
+                <img src="/page/img/br.svg" width="25"> Português
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/en/" data-lang="en">
+                <img src="/page/img/us.svg" width="25"> English
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+            <i data-theme-icon class="bi bi-sun"></i>
+            <span data-theme-text class="d-none d-sm-inline">Light</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end theme-select-box docs-dropdown" aria-labelledby="themeToggle" style="padding: 5px;">
+            <li><button class="dropdown-item theme-select-text" data-theme="light"><i class="bi bi-sun"></i> Light</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="dark"><i class="bi bi-moon-stars"></i> Dark</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="auto"><i class="bi bi-circle-half"></i> Auto</button></li>
+          </ul>
+        </div>
+
+        <a class="btn docs-action-btn docs-icon-btn" href="https://github.com/MuscleLib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container start-hero">
+    <div class="starter-template">
+      <h1 data-translate="page.heading">MuscleLib API</h1>
+
+      <div class="lead">
+        <p data-translate="headset.description">Welcome to the MuscleLib API documentation. Explore our endpoints and access a comprehensive database of exercises to enhance your fitness applications.</p>
+      </div>
+
+      <div class="start-links">
+        <div>
+          <a role="button" class="btn btn-outline-info" href="/en/docs" target="_parent" data-translate="api.documentation">
+            <i class="bi bi-database"></i> API Documentation
+          </a>
+          <a role="button" class="btn btn-outline-danger" href="https://github.com/MuscleLib/MuscleLibAPI/issues" target="_blank" data-translate="report.issues">
+            <i class="bi bi-exclamation-circle"></i> Report Issues
+          </a>
+        </div>
+      </div>
+
+      <section class="start-stats">
+        <div class="container text-center">
+          <div class="row row-cols-2">
+            <h2 class="col grid">
+              800+
+              <span data-translate="exercises.count">Exercises</span>
+            </h2>
+            <h2 class="col grid">
+              1000+
+              <span data-translate="images.count">Images</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container text-center py-5">
+          <h2 class="mb-4" data-translate="what.makes.different">What Makes MuscleLib Different</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-code-slash"></i>
+                <h4 class="mt-3" data-translate="developer.first">Developer First</h4>
+                <p class="text-secondary" data-translate="developer.first.description">Simple and intuitive API, easy to integrate with any language or platform.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-diagram-3"></i>
+                <h4 class="mt-3" data-translate="restful.api">RESTful API</h4>
+                <p class="text-secondary" data-translate="restful.api.description">Well-structured and predictable endpoints to simplify data consumption.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-speedometer2"></i>
+                <h4 class="mt-3" data-translate="high.performance">High Performance</h4>
+                <p class="text-secondary" data-translate="high.performance.description">Fast and efficient responses, ensuring minimal latency.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-collection"></i>
+                <h4 class="mt-3" data-translate="extensive.exercise.database">Extensive Exercise Database</h4>
+                <p class="text-secondary" data-translate="extensive.exercise.database.description">Comprehensive exercise library with illustrative images stored in a CDN for quick loading.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-bullseye"></i>
+                <h4 class="mt-3" data-translate="muscle.targeting">Muscle Targeting</h4>
+                <p class="text-secondary" data-translate="muscle.targeting.description">Each exercise includes detailed information about the primary and secondary muscles worked.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-unlock"></i>
+                <h4 class="mt-3" data-translate="no.api.key.required">No API Key Required</h4>
+                <p class="text-secondary" data-translate="no.api.key.required.description">Direct access to the API without authentication, making integration hassle-free.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-translate"></i>
+                <h4 class="mt-3" data-translate="multilingual.support">Multilingual Support</h4>
+                <p class="text-secondary" data-translate="multilingual.support.description">Support for multiple languages, ensuring global accessibility.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-github"></i>
+                <h4 class="mt-3" data-translate="open.source">Open Source</h4>
+                <p class="text-secondary" data-translate="open.source.description">MuscleLib API is open-source. Check out the source code on github.</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-gift"></i>
+                <h4 class="mt-3" data-translate="free.tier">Free</h4>
+                <p class="text-secondary" data-translate="free.tier.description">Free access for testing, no payment required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <footer class="copyright text-center py-4">
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-translate="copyright">MuscleLib.</span>
+    </p>
+    <div class="mt-3">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="me-3" data-translate="terms.of.service">
+        Terms of Service
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3" data-translate="privacy.policy">
+        Privacy Policy
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL: TERMS OF SERVICE -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="terms.title">
+            Terms of Service
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h1>MuscleLib API – Terms of Service</h1>
+<h2>1. Acceptance of Terms</h2>
+<p>By accessing or using the MuscleLib API, you agree to these Terms of Service.<br>If you do not agree with any part of these terms, you must not use the API.</p>
+<h2>2. Use of the API</h2>
+<p>The MuscleLib API is provided free of charge and is currently intended for small to medium-sized projects.<br>Because the API is still under development, temporary outages, changes, or instability may occur.</p>
+<h2>3. Intellectual Property</h2>
+<p>The exercise data and images provided by the MuscleLib API are considered public domain or free-to-use sources.<br>However, the API source code, documentation structure, and related software are the intellectual property of the MuscleLib project.</p>
+<p>You may not copy, redistribute, or resell the API itself without explicit permission.</p>
+<h2>4. Limitation of Liability</h2>
+<p>The API is provided “as is”, without warranties of any kind.<br>The MuscleLib project is not responsible for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the API.</p>
+<h2>5. Changes to the Terms</h2>
+<p>These Terms of Service may be updated at any time.<br>Continued use of the API after changes are published constitutes acceptance of the revised terms.</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="terms.close">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PRIVACY POLICY -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="privacy.title">
+            Privacy Policy
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h1>MuscleLib API – Privacy Policy</h1>
+<h2>1. Data Collection</h2>
+<p>The MuscleLib API does <strong>not</strong> collect, store, or process personal user data.</p>
+<h2>2. Cookies</h2>
+<p>Cookies are used only to store:</p>
+<ul>
+<li>Language preference</li>
+<li>Theme preference (light / dark / auto)</li>
+</ul>
+<p>No tracking, analytics, or advertising cookies are used.</p>
+<h2>3. Data Sharing</h2>
+<p>No data is shared with third parties.<br>All stored preferences are used exclusively to improve the user experience.</p>
+<h2>4. Changes to This Policy</h2>
+<p>This Privacy Policy may be updated periodically.<br>Any changes will be reflected in this documentation.</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="privacy.close">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/page/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/page/js/dark-light.js"></script>
+</body>
+</html>

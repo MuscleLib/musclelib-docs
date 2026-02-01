@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {{t:page.title}} </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/page/css/docs.css">
+</head>
+<body>
+    <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light docs-topbar">
+    <div class="container-fluid navbar-docs">
+      <div class="navbar-left">
+        <button class="btn docs-icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNested" aria-label="Open navigation">
+          <i class="bi bi-list"></i>
+        </button>
+        <a class="navbar-brand docs-brand" href="#" aria-label="MuscleLib">
+          <img
+            src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-light="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769911366095.svg"
+            alt="MuscleLib logo"
+            class="brand-logo"
+          >
+        </a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.lang}}">
+            <i class="bi bi-translate"></i>
+            <span data-selected-flag>{{lang_flag}}</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end docs-dropdown" data-lang-select style="padding: 5px;">
+            <li><a class="dropdown-item" href="/pt/docs" data-lang="pt"><img src="/page/img/br.svg" width="25"> Português</a></li>
+            <li><a class="dropdown-item" href="/en/docs" data-lang="en"><img src="/page/img/us.svg" width="25"> English</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+            <i data-theme-icon class="bi bi-sun"></i>
+            <span data-theme-text class="d-none d-sm-inline">Light</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end theme-select-box docs-dropdown" aria-labelledby="themeToggle" style="padding: 5px;">
+            <li><button class="dropdown-item theme-select-text" data-theme="light"><i class="bi bi-sun"></i> Light</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="dark"><i class="bi bi-moon-stars"></i> Dark</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="auto"><i class="bi bi-circle-half"></i> Auto</button></li>
+          </ul>
+        </div>
+        <a class="btn docs-action-btn docs-icon-btn" href="https://github.com/MuscleLib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-start" id="offcanvasNested" tabindex="-1">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <img
+          src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+          data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+          data-logo-light="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769911366095.svg"
+          alt="MuscleLib logo"
+          class="brand-logo"
+        >
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="nested-nav">
+        <nav class="nav flex-column">
+
+          <div class="nav-item">
+            <a class="nav-link nested-link" data-bs-toggle="collapse" href="#item-1">
+              <i class="bi bi-compass"></i>
+              <span data-translate="menu.get_started">{{t:menu.get_started}}</span>
+            </a>
+            <div class="collapse collapse-nested" id="item-1">
+              <nav class="nav flex-column">
+                <a class="nav-link nested-link sublink" href="#item-1-1" data-translate="menu.all_exercises">{{t:menu.all_exercises}}</a>
+                <a class="nav-link nested-link sublink" href="#item-1-2" data-translate="menu.lang">{{t:menu.lang}}</a>
+                <a class="nav-link nested-link sublink" href="#item-1-3" data-translate="menu.fields">{{t:menu.fields}}</a>
+                <a class="nav-link nested-link sublink" href="#item-1-4" data-translate="menu.page">{{t:menu.page}}</a>
+                <a class="nav-link nested-link sublink" href="#item-1-5" data-translate="menu.limit">{{t:menu.limit}}</a>
+                <a class="nav-link nested-link sublink" href="#item-1-6" data-translate="menu.dynamic_filters">{{t:menu.dynamic_filters}}</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link nested-link" href="#item-2">
+              <i class="bi bi-search"></i>
+              <span data-translate="menu.search">{{t:menu.search}}</span>
+            </a>
+          </div>
+
+          <div class="nav-item">
+            <a class="nav-link nested-link" data-bs-toggle="collapse" href="#item-3">
+              <i class="bi bi-images"></i>
+              <span data-translate="menu.exercise_images">{{t:menu.exercise_images}}</span>
+            </a>
+            <div class="collapse" id="item-3">
+              <nav class="nav flex-column">
+                <a class="nav-link nested-link sublink" href="#item-3-1" data-translate="menu.images_structure">{{t:menu.images_structure}}</a>
+              </nav>
+            </div>
+          </div>
+
+        </nav>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container docs-main">
+    <section id="overview">
+      <section class="lead">
+        <p data-translate="overview.description">{{t:overview.description}}</p>
+      </section>
+      <h5><strong data-translate="overview.base_url">{{t:overview.base_url}}</strong></h5>
+      <p data-translate="overview.base_url_description">{{t:overview.base_url_description}}</p>
+      <pre><button class="copy-button"><i class="fa-solid fa-copy"></i></button><code class="https">https://libapi.vercel.app/api</code></pre>
+    </section>
+
+    <section id="endpoints item-1" class="mt-5">
+      <h2 class="mb-4" data-translate="endpoints.get_started">{{t:endpoints.get_started}}</h2>
+
+      <section class="endpoitn-get" id="item-1-1">
+        <div class="mb-5">
+          <h5 data-translate="endpoints.all_exercises">{{t:endpoints.all_exercises}}</h5>
+          <p class="description" data-translate="endpoints.all_exercises_description">{{t:endpoints.all_exercises_description}}</p>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises</span>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse">
+                <div class="accordion-body selectBox" onclick="selectText(this)">
+                  <p class="link">https://libapi.vercel.app/api/exercises</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="response-schema" id="SchemaGet">
+            <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#SchemaGet200" aria-expanded="false" aria-controls="SchemaGet200">
+                <i class="bi bi-chevron-right"></i>
+                <strong>200 Success</strong>
+              </button>
+              <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#SchemaGet400" aria-expanded="false" aria-controls="SchemaGet400">
+                <i class="bi bi-chevron-right"></i>
+                <strong>400 Bad Request</strong>
+              </button>
+            </p>
+
+            <div class="collapse" id="SchemaGet200" data-bs-parent="#SchemaGet">
+              <div class="card card-body">
+                <div class="architecture-container">
+                  <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                  <ul class="architecture-list">
+                    <li class="level-1">
+                      type: <span class="type-array">array</span>
+                      <ul class="architecture-list">
+                        <li class="level-2">
+                          items: <span class="type-object">object</span>
+                          <ul class="architecture-list">
+                            <li class="level-3">_id: <span class="type-string">string</span></li>
+                            <li class="level-3">name: <span class="type-string">string</span></li>
+                            <li class="level-3">force: <span class="type-string">string</span></li>
+                            <li class="level-3">level: <span class="type-string">string</span></li>
+                            <li class="level-3">mechanic: <span class="type-string">string</span></li>
+                            <li class="level-3">equipment: <span class="type-string">string</span></li>
+                            <li class="level-3">primaryMuscles: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                            <li class="level-3">secondaryMuscles: <span class="type-array">array</span> (items: <span class="type-object">object</span>) - details not specified)</li>
+                            <li class="level-3">instructions: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                            <li class="level-3">category: <span class="type-string">string</span></li>
+                            <li class="level-3">images: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                            <li class="level-3">id: <span class="type-string">string</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="collapse" id="SchemaGet400" data-bs-parent="#SchemaGet">
+              <div class="card card-body">
+                <div class="architecture-container">
+                  <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                  <ul class="architecture-list">
+                    <li class="level-1">
+                      type: <span class="type-object">object</span>
+                      <ul class="architecture-list">
+                        <li class="level-2">
+                          properties:
+                          <ul class="architecture-list">
+                            <li class="level-3">message: <span class="type-string">string</span></li>
+                            <li class="level-3">error: <span class="type-string">string</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <section class="response-exemples btn-group">
+            <!-- Tabs response exemples -->
+            <ul class="nav nav-tabs" id="GetTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" id="Get-200-tab" data-group="Get" data-value="Get-200" data-bs-toggle="tab" data-bs-target="#Get-200" type="button" role="tab" aria-controls="Get-200" aria-selected="true"><strong>200 OK</strong></button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link button bg-danger border-danger all-400 btn" id="Get-400-tab" data-bs-toggle="tab" data-bs-target="#Get-400" data-group="Get" data-value="Get-400" type="button" role="tab" aria-controls="Get-400" aria-selected="false"><strong>400 Bad Request</strong></button>
+              </li>
+            </ul>
+            <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+              <div class="tab-pane fade show active" id="Get-200" role="tabpanel" aria-labelledby="Get-200-tab">
+                <pre><code class="json">
+  {
+    "_id": "677471831533c77a3a55b2e0",
+    "name": "3/4 Sit-Up",
+    "force": "pull",
+    "level": "beginner",
+    "mechanic": "compound",
+    "equipment": "body only",
+    "primaryMuscles": [
+      "abdominals"
+    ],
+    "secondaryMuscles": [],
+    "instructions": [
+      "Lie down on the floor and secure your feet"
+    ],
+    "category": "strength",
+    "images": [
+      "3_4_Sit-Up/0.jpg",
+      "3_4_Sit-Up/1.jpg"
+    ],
+    "id": "3_4_Sit-Up"
+  }              
+                </code></pre>
+              </div>
+              <div class="tab-pane fade" id="Get-400" role="tabpanel" aria-labelledby="Get-400-tab">
+                <pre><code class="json">
+  {
+    "message": "Error fetching exercises.",
+    "error": "Operation `exercises.distinct()` buffering timed out after 10000ms"
+  }
+                </code></pre>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="endpoint-lang" id="item-1-2">
+        <h5 data-translate="endpoints.lang">{{t:endpoints.lang}}</h5>
+        <p class="description" data-translate="endpoints.lang_description">{{t:endpoints.lang_description}}</p>
+        <h5 data-translate="endpoints.example_request">{{t:endpoints.example_request}}</h5>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:menu.lang}}Link" aria-expanded="false" aria-controls="{{t:menu.lang}}Link">
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?lang=en</span>
+              </button>
+            </h2>
+            <div id="{{t:menu.lang}}Link" class="accordion-collapse collapse">
+              <div class="accordion-body selectBox" onclick="selectText(this)">
+                <p class="link">https://libapi.vercel.app/api/exercises?lang=en</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-schema" id="Schema{{t:menu.lang}}">
+          <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+          <p class="d-inline-flex gap-1">
+            <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.lang}}200" aria-expanded="false" aria-controls="Schema{{t:menu.lang}}200">
+              <i class="bi bi-chevron-right"></i>
+              <strong>200 Success</strong>
+            </button>
+            <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.lang}}400" aria-expanded="false" aria-controls="Schema{{t:menu.lang}}400">
+              <i class="bi bi-chevron-right"></i>
+              <strong>400 Bad Request</strong>
+            </button>
+          </p>
+
+          <div class="collapse" id="Schema{{t:menu.lang}}200" data-bs-parent="#Schema{{t:menu.lang}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-array">array</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        items: <span class="type-object">object</span>
+                        <ul class="architecture-list">
+                          <li class="level-3">_id: <span class="type-string">string</span></li>
+                          <li class="level-3">name: <span class="type-string">string</span></li>
+                          <li class="level-3">force: <span class="type-string">string</span></li>
+                          <li class="level-3">level: <span class="type-string">string</span></li>
+                          <li class="level-3">mechanic: <span class="type-string">string</span></li>
+                          <li class="level-3">equipment: <span class="type-string">string</span></li>
+                          <li class="level-3">primaryMuscles: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                          <li class="level-3">secondaryMuscles: <span class="type-array">array</span> (items: <span class="type-object">object</span>) - details not specified)</li>
+                          <li class="level-3">instructions: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                          <li class="level-3">category: <span class="type-string">string</span></li>
+                          <li class="level-3">images: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                          <li class="level-3">id: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse" id="Schema{{t:menu.lang}}400" data-bs-parent="#Schema{{t:menu.lang}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-object">object</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        properties:
+                        <ul class="architecture-list">
+                          <li class="level-3">message: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <section class="response-exemples btn-group">
+          <!-- Tabs response exemples -->
+          <ul class="nav nav-tabs" id="{{t:menu.lang}}Tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" data-group="{{t:menu.lang}}" data-value="{{t:menu.lang}}-200" id="{{t:menu.lang}}-200-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.lang}}-200" type="button" role="tab" aria-controls="{{t:menu.lang}}-200" aria-selected="true"><strong>200 OK</strong></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link button bg-danger border-danger all-400 btn" data-group="{{t:menu.lang}}" data-value="{{t:menu.lang}}-200" id="{{t:menu.lang}}-400-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.lang}}-400" type="button" role="tab" aria-controls="{{t:menu.lang}}-400" aria-selected="false"><strong>400 Bad Request</strong></button>
+            </li>
+          </ul>
+          <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+            <div class="tab-pane fade show active" id="{{t:menu.lang}}-200" role="tabpanel" aria-labelledby="{{t:menu.lang}}-200-tab">
+              <pre><code class="json">
+  [
+    {
+      "_id": "677471841533c77a3a55b2e6",
+      "name": "Advanced Kettlebell Windmill",
+      "force": "push",
+      "level": "intermediate",
+      "mechanic": "isolation",
+      "equipment": "kettlebells",
+      "primaryMuscles": [
+        "abdominals"
+      ],
+      "secondaryMuscles": [
+        "glutes",
+        "hamstrings",
+        "shoulders"
+      ],
+      "instructions": [
+        "Clean and press a kettlebell overhead with one arm."
+      ],
+      "category": "strength",
+      "images": [
+        "Advanced_Kettlebell_Windmill/0.jpg",
+        "Advanced_Kettlebell_Windmill/1.jpg"
+      ],
+      "id": "Advanced_Kettlebell_Windmill"
+    }             
+              </code></pre>
+            </div>
+            <div class="tab-pane fade" id="{{t:menu.lang}}-400" role="tabpanel" aria-labelledby="{{t:menu.lang}}-400-tab">
+              <pre><code class="json">
+  {
+    "message": "Invalid language. Use 'en' or 'pt'."
+  }
+              </code></pre>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="endpoint-fields" id="item-1-3">
+        <h5 data-translate="endpoints.fields">{{t:endpoints.fields}}</h5>
+        <p class="description" data-translate="endpoints.fields_description">{{t:endpoints.fields_description}}</p>
+        <h5 data-translate="endpoints.example_request">{{t:endpoints.example_request}}</h5>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:menu.fields}}Link" aria-expanded="false" aria-controls="{{t:menu.fields}}Link">
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?fields</span>
+              </button>
+            </h2>
+            <div id="{{t:menu.fields}}Link" class="accordion-collapse collapse">
+              <div class="accordion-body selectBox" onclick="selectText(this)">
+                <p class="link">https://libapi.vercel.app/api/exercises?fields=instructions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-schema" id="Schema{{t:menu.fields}}">
+          <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+          <p class="d-inline-flex gap-1">
+            <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.fields}}200" aria-expanded="false" aria-controls="Schema{{t:menu.fields}}200">
+              <i class="bi bi-chevron-right"></i>
+              <strong>200 Success</strong>
+            </button>
+            <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.fields}}400" aria-expanded="false" aria-controls="Schema{{t:menu.fields}}400">
+              <i class="bi bi-chevron-right"></i>
+              <strong>400 Bad Request</strong>
+            </button>
+          </p>
+
+          <div class="collapse" id="Schema{{t:menu.fields}}200" data-bs-parent="#Schema{{t:menu.fields}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-object">object</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        items: <span class="type-object">object</span>
+                        <ul class="architecture-list">
+                          <li class="level-3">_id: <span class="type-string">string</span></li>
+                          <li class="level-3">name: <span class="type-string">string</span></li>
+                          <li class="level-3">instructions: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse" id="Schema{{t:menu.fields}}400" data-bs-parent="#Schema{{t:menu.fields}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-object">object</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        properties:
+                        <ul class="architecture-list">
+                          <li class="level-3">message: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="response-exemples btn-group">
+          <!-- Tabs response exemples -->
+          <ul class="nav nav-tabs" id="{{t:menu.fields}}Tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" data-group="{{t:menu.fields}}" data-value="{{t:menu.fields}}-200" id="{{t:menu.fields}}200-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.fields}}200" type="button" role="tab" aria-controls="{{t:menu.fields}}200" aria-selected="true"><strong>200 OK</strong></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link button bg-danger border-danger all-400 btn" data-group="{{t:menu.fields}}" data-value="{{t:menu.fields}}-200" id="{{t:menu.fields}}400-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.fields}}400" type="button" role="tab" aria-controls="{{t:menu.fields}}400" aria-selected="false"><strong>400 Bad Request</strong></button>
+            </li>
+          </ul>
+          <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+            <div class="tab-pane fade show active" id="{{t:menu.fields}}200" role="tabpanel" aria-labelledby="{{t:menu.fields}}200-tab">
+              <pre><code class="json">
+  {
+    "_id": "677471841533c77a3a55b2e9",
+    "name": "Alternate Hammer Curl",
+    "instructions": [
+      "Stand up with your torso upright and a dumbbell in each hand being held at arms length. The elbows should be close to the torso.",
+      "The palms of the hands should be facing your torso. This will be your starting position."
+    ]
+  }         
+              </code></pre>
+            </div>
+            <div class="tab-pane fade" id="{{t:menu.fields}}400" role="tabpanel" aria-labelledby="{{t:menu.fields}}400-tab">
+              <pre><code class="json">
+  {
+    "message": "The field(s) parameter(s) cannot be empty. Valid fields are: force, level, mechanic, equipment, primaryMuscles, secondaryMuscles, instructions, category, images, name."
+  }
+              </code></pre>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="endpoint-page" id="item-1-4">
+        <h5 data-translate="endpoints.page">{{t:endpoints.page}}</h5>
+        <p class="description" data-translate="endpoints.page_description">{{t:endpoints.page_description}}</p>
+        <h5 data-translate="endpoints.example_request">{{t:endpoints.example_request}}</h5>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:menu.page}}Link" aria-expanded="false" aria-controls="{{t:menu.page}}Link">
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?page=</span>
+              </button>
+            </h2>
+            <div id="{{t:menu.page}}Link" class="accordion-collapse collapse">
+              <div class="accordion-body selectBox" onclick="selectText(this)">
+                <p class="link">https://libapi.vercel.app/api/exercises?page=10</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-schema" id="Schema{{t:menu.page}}">
+          <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+          <p class="d-inline-flex gap-1">
+            <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.page}}200" aria-expanded="false" aria-controls="Schema{{t:menu.page}}200">
+              <i class="bi bi-chevron-right"></i>
+              <strong>200 Success</strong>
+            </button>
+            <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.page}}400" aria-expanded="false" aria-controls="Schema{{t:menu.page}}400">
+              <i class="bi bi-chevron-right"></i>
+              <strong>400 Bad Request</strong>
+            </button>
+          </p>
+
+          <div class="collapse" id="Schema{{t:menu.page}}200" data-bs-parent="#Schema{{t:menu.page}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-array">array</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        items: <span class="type-object">object</span>
+                        <ul class="architecture-list">
+                          <li class="level-3">_id: <span class="type-string">string</span></li>
+                          <li class="level-3">name: <span class="type-string">string</span></li>
+                          <li class="level-3">force: <span class="type-string">string</span></li>
+                          <li class="level-3">level: <span class="type-string">string</span></li>
+                          <li class="level-3">mechanic: <span class="type-string">string</span></li>
+                          <li class="level-3">equipment: <span class="type-string">string</span></li>
+                          <li class="level-3">primaryMuscles: <span class="type-array">array</span> (items: s<span class="type-string">string</span>)</li>
+                          <li class="level-3">secondaryMuscles: <span class="type-array">array</span> (items: <span class="type-object">object</span> - details not specified)</li>
+                          <li class="level-3">instructions: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                          <li class="level-3">category: <span class="type-string">string</span></li>
+                          <li class="level-3">images: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                          <li class="level-3">id: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse" id="Schema{{t:menu.page}}400" data-bs-parent="#Schema{{t:menu.page}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: obeject
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        properties:
+                        <ul class="architecture-list">
+                          <li class="level-3">message: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <section class="response-exemples btn-group">
+          <!-- Tabs response exemples -->
+          <ul class="nav nav-tabs" id="{{t:menu.page}}Tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" data-group="{{t:menu.page}}" data-value="{{t:menu.page}}-200" id="{{t:menu.page}}200-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.page}}200" type="button" role="tab" aria-controls="{{t:menu.page}}200" aria-selected="true"><strong>200 OK</strong></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link button bg-danger border-danger all-400 btn" data-group="{{t:menu.page}}" data-value="{{t:menu.page}}-200" id="{{t:menu.page}}400-tab" data-bs-toggle="tab" data-bs-target="#{{t:menu.page}}400" type="button" role="tab" aria-controls="{{t:menu.page}}200" aria-selected="false"><strong>400 Bad Request</strong></button>
+            </li>
+          </ul>
+          <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+            <div class="tab-pane fade show active" id="{{t:menu.page}}200" role="tabpanel" aria-labelledby="{{t:menu.page}}200-tab">
+              <pre><code class="json">
+  {
+    "_id": "677471841533c77a3a55b4d4",
+    "name": "One-Arm Open Palm Kettlebell Clean",
+    "force": "pull",
+    "level": "intermediate",
+    "mechanic": "compound",
+    "equipment": "kettlebells",
+    "primaryMuscles": [
+      "hamstrings"
+    ],
+    "secondaryMuscles": [
+      "forearms",
+      "glutes",
+      "lower back",
+      "quadriceps",
+      "shoulders"
+    ],
+    "instructions": [
+      "Place one kettlebell between your feet."
+    ],
+    "category": "strength",
+    "images": [
+      "One-Arm_Open_Palm_Kettlebell_Clean/0.jpg",
+      "One-Arm_Open_Palm_Kettlebell_Clean/1.jpg"
+    ],
+    "id": "One-Arm_Open_Palm_Kettlebell_Clean",
+    "__v": 0
+  }           
+              </code></pre>
+            </div>
+            <div class="tab-pane fade" id="{{t:menu.page}}400" role="tabpanel" aria-labelledby="{{t:menu.page}}400-tab">
+              <pre><code class="json">
+  {
+    "message": "parameter 'page' is invalid. use a value greater than or equal to 0."
+  }
+              </code></pre>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="endpoint-limit" id="item-1-5">
+        <h5 data-translate="endpoints.limit">{{t:endpoints.limit}}</h5>
+        <p class="description" data-translate="endpoints.limit_description">{{t:endpoints.limit_description}}</p>
+        <h5 data-translate="endpoints.example_request">{{t:endpoints.example_request}}</h5>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:menu.limit}}Link" aria-expanded="false" aria-controls="{{t:menu.limit}}Link">
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span>
+                <span class="router-get">/exercises?limit=</span>
+              </button>
+            </h2>
+            <div id="{{t:menu.limit}}Link" class="accordion-collapse collapse">
+              <div class="accordion-body selectBox" onclick="selectText(this)">
+                <p class="link">https://libapi.vercel.app/api/exercises?limit=5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="response-schema" id="Schema{{t:menu.limit}}">
+          <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+          <p class="d-inline-flex gap-1">
+            <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.limit}}200" aria-expanded="false" aria-controls="Schema{{t:menu.limit}}200">
+              <i class="bi bi-chevron-right"></i>
+              <strong>200 Success</strong>
+            </button>
+            <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:menu.limit}}400" aria-expanded="false" aria-controls="Schema{{t:menu.limit}}400">
+              <i class="bi bi-chevron-right"></i>
+              <strong>400 Bad Request</strong>
+            </button>
+          </p>
+
+          <div class="collapse" id="Schema{{t:menu.limit}}200" data-bs-parent="#Schema{{t:menu.limit}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled">RESPONSE SCHEMA: <strong>application/json</strong></p>
+                <hr style="margin-top:-2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-array">array</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        items: <span class="type-object">object</span>
+                        <ul class="architecture-list">
+                          <li class="level-3">_id: <span class="type-string">string</span></li>
+                          <li class="level-3">name: <span class="type-string">string</span></li>
+                          <li class="level-3">force: <span class="type-string">string</span></li>
+                          <li class="level-3">level: <span class="type-string">string</span></li>
+                          <li class="level-3">mechanic: <span class="type-string">string</span></li>
+                          <li class="level-3">equipment: <span class="type-string">string</span></li>
+                          <li class="level-3">primaryMuscles: <span class="type-array">array</span></li>
+                          <li class="level-3">secondaryMuscles: <span class="type-array">array</span></li>
+                          <li class="level-3">instructions: <span class="type-array">array</span></li>
+                          <li class="level-3">category: <span class="type-string">string</span></li>
+                          <li class="level-3">images: <span class="type-array">array</span></li>
+                          <li class="level-3">id: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse" id="Schema{{t:menu.limit}}400" data-bs-parent="#Schema{{t:menu.limit}}">
+            <div class="card card-body">
+              <div class="architecture-container">
+                <p class="disabled">RESPONSE SCHEMA: <strong>application/json</strong></p>
+                <hr style="margin-top:-2vh;">
+                <ul class="architecture-list">
+                  <li class="level-1">
+                    type: <span class="type-object">object</span>
+                    <ul class="architecture-list">
+                      <li class="level-2">
+                        properties:
+                        <ul class="architecture-list">
+                          <li class="level-3">message: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="response-exemples btn-group">
+          <ul class="nav nav-tabs" id="{{t:menu.limit}}Tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" data-group="{{t:menu.limit}}" data-bs-toggle="tab" data-bs-target="#{{t:menu.limit}}200" type="button">
+                <strong>200 OK</strong>
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link button bg-danger border-danger all-400 btn" data-group="{{t:menu.limit}}" data-bs-toggle="tab" data-bs-target="#{{t:menu.limit}}400" type="button">
+                <strong>400 Bad Request</strong>
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="{{t:menu.limit}}200">
+              <pre><code class="json">
+[
+  {
+    "_id": "677471841533c77a3a55b4c1",
+    "name": "Bent-Over Two-Arm Long Bar Row",
+    "force": "pull"
+  }
+]
+              </code></pre>
+            </div>
+            <div class="tab-pane fade" id="{{t:menu.limit}}400">
+              <pre><code class="json">
+{
+  "message": "parameter 'limit' must be greater than 0"
+}
+              </code></pre>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="endpoint-dynamic" id="item-1-6">
+        <h5 data-translate="endpoints.dynamic_filters">{{t:endpoints.dynamic_filters}}</h5>
+        <p class="description" data-translate="endpoints.dynamic_filters_description">{{t:endpoints.dynamic_filters_description}}</p>
+
+<h5 data-translate="endpoints.example_request">{{t:endpoints.example_request}}</h5>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?level=</span>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body selectBox" onclick="selectText(this)">
+        <p class="link">https://libapi.vercel.app/api/exercises?level=expert&force=push&primaryMuscles=chest</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="response-schema" id="FiltersSchema">
+  <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+
+  <p class="d-inline-flex gap-1">
+    <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#FiltersSchema200" aria-expanded="false" aria-controls="FiltersSchema200">
+      <i class="bi bi-chevron-right"></i>
+      <strong>200 Success</strong>
+    </button>
+    <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#FiltersSchema400" aria-expanded="false" aria-controls="FiltersSchema400">
+      <i class="bi bi-chevron-right"></i>
+      <strong>400 Bad Request</strong>
+    </button>
+  </p>
+
+  <div class="collapse" id="FiltersSchema200" data-bs-parent="#FiltersSchema">
+    <div class="card card-body">
+      <div class="architecture-container">
+        <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+        <ul class="architecture-list">
+          <li class="level-1">
+            type: <span class="type-array">array</span>
+            <ul class="architecture-list">
+              <li class="level-2">
+                items: <span class="type-object">object</span>
+                <ul class="architecture-list">
+                  <li class="level-3">_id: <span class="type-string">string</span></li>
+                  <li class="level-3">name: <span class="type-string">string</span></li>
+                  <li class="level-3">force: <span class="type-string">string</span></li>
+                  <li class="level-3">level: <span class="type-string">string</span></li>
+                  <li class="level-3">mechanic: <span class="type-string">string</span></li>
+                  <li class="level-3">equipment: <span class="type-string">string</span></li>
+                  <li class="level-3">primaryMuscles: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                  <li class="level-3">secondaryMuscles: <span class="type-array">array</span> (items: <span class="type-object">object</span> - details not specified)</li>
+                  <li class="level-3">instructions: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                  <li class="level-3">category: <span class="type-string">string</span></li>
+                  <li class="level-3">images: <span class="type-array">array</span> (items: <span class="type-string">string</span>)</li>
+                  <li class="level-3">id: <span class="type-string">string</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="FiltersSchema400" data-bs-parent="#FiltersSchema">
+    <div class="card card-body">
+      <div class="architecture-container">
+        <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p><hr style="margin-top: -2vh;">
+        <ul class="architecture-list">
+          <li class="level-1">
+            type: <span class="type-object">object</span>
+            <ul class="architecture-list">
+              <li class="level-2">
+                properties:
+                <ul class="architecture-list">
+                  <li class="level-3">message: <span class="type-string">string</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="response-exemples btn-group">
+  <!-- Tabs response exemples -->
+  <ul class="nav nav-tabs" id="all{{t:exercises.count}}Tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active text-bg-light bg-success border-success button all-200 btn" data-group="Filters" data-value="Filters-200" id="Filters200-tab" data-bs-toggle="tab" data-bs-target="#Filters200" type="button" role="tab" aria-controls="Filters200" aria-selected="true"><strong>200 OK</strong></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link button bg-danger border-danger all-400 btn" data-group="Filters" data-value="Filters-200" id="Filters400-tab" data-bs-toggle="tab" data-bs-target="#Filters400" type="button" role="tab" aria-controls="Filters400" aria-selected="false"><strong>400 Bad Request</strong></button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+    <div class="tab-pane fade show active" id="Filters200" role="tabpanel" aria-labelledby="Filters200-tab">
+      <pre><code class="json">[
+  {
+    "_id": "677471841533c77a3a55b4ff",
+    "name": "Plyo Kettlebell Pushups",
+    "force": "push",
+    "level": "expert",
+    "mechanic": "compound",
+    "equipment": "kettlebells",
+    "primaryMuscles": [
+      "chest"
+    ],
+    "secondaryMuscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "instructions": [
+      "Place a kettlebell on the floor. Place yourself in a pushup position, on your toes with one hand on the ground and one hand holding the kettlebell, with your elbows extended. This will be your starting position."
+    ],
+    "category": "strength",
+    "images": [
+      "Plyo_Kettlebell_Pushups/0.jpg",
+      "Plyo_Kettlebell_Pushups/1.jpg"
+    ],
+    "id": "Plyo_Kettlebell_Pushups",
+    "__v": 0
+  }
+]</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="Filters400" role="tabpanel" aria-labelledby="Filters400-tab">
+      <pre><code class="json">{
+  "message": "No exercises found."
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+
+      <section class="endpoint-search mt-5" id="item-2">
+        <h2 data-translate="endpoints.search">{{t:endpoints.search}}</h2>
+        <p class="description" data-translate="endpoints.search_description">{{t:endpoints.search_description}}</p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:endpoints.search}}Link" aria-expanded="false" aria-controls="{{t:endpoints.search}}Link">
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span>
+                <span class="router-get">/exercises/search?query=</span>
+              </button>
+            </h2>
+              <div id="{{t:endpoints.search}}Link" class="accordion-collapse collapse">
+                <div class="accordion-body selectBox" onclick="selectText(this)">
+                  <p class="link">https://libapi.vercel.app/api/exercises/search?query=push</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+<section id="item-3">
+  <div class="mb-5">
+    <h5 data-translate="endpoints.exercise_images">{{t:endpoints.exercise_images}}</h5>
+    <p class="description" data-translate="endpoints.exercise_images_description">
+      {{t:endpoints.exercise_images_description}}
+    </p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{t:images.count}}" aria-expanded="false" aria-controls="collapse{{t:images.count}}">
+            <span class="badge text-bg-success text-dark"><strong>GET</strong></span>
+            <span class="router-get">/exercises/{exerciseName}/{imageIndex}.jpg</span>
+          </button>
+        </h2>
+        <div id="collapse{{t:images.count}}" class="accordion-collapse collapse">
+          <div class="accordion-body selectBox" onclick="selectText(this)">
+            <p class="link">https://libapi.vercel.app/api/exercises/Stiff-Legged_Barbell_Deadlift/0.jpg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="response-schema" id="Schema{{t:images.count}}">
+      <h6 class="response-samples" data-translate="response.samples">{{t:response.samples}}</h6>
+
+      <p class="d-inline-flex gap-1">
+        <button class="btn btn-success toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:images.count}}200" aria-expanded="false" aria-controls="Schema{{t:images.count}}200">
+          <i class="bi bi-chevron-right"></i>
+          <strong>200 Success</strong>
+        </button>
+        <button class="btn btn-danger toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#Schema{{t:images.count}}404" aria-expanded="false" aria-controls="Schema{{t:images.count}}404">
+          <i class="bi bi-chevron-right"></i>
+          <strong>404 Not Found</strong>
+        </button>
+      </p>
+
+      <div class="collapse" id="Schema{{t:images.count}}200" data-bs-parent="#Schema{{t:images.count}}">
+        <div class="card card-body">
+          <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>image/jpeg</strong></p>
+          <img src="https://libapi.vercel.app/api/exercises/Stiff-Legged_Barbell_Deadlift/0.jpg" alt="Exercise Image Example" class="img-fluid rounded mx-auto d-block">
+        </div>
+      </div>
+
+      <div class="collapse" id="Schema{{t:images.count}}404" data-bs-parent="#Schema{{t:images.count}}">
+        <div class="card card-body">
+          <div class="architecture-container">
+            <p class="disabled" aria-disabled="true">RESPONSE SCHEMA: <strong>application/json</strong></p>
+            <hr style="margin-top: -2vh;">
+            <ul class="architecture-list">
+              <li class="level-1">
+                type: <span class="type-object">object</span>
+                <ul class="architecture-list">
+                  <li class="level-2">
+                    properties:
+                    <ul class="architecture-list">
+                      <li class="level-3">message: <span class="type-string">string</span></li>
+                      <li class="level-3">
+                        availableOptions: <span class="type-array">array</span>
+                        <ul class="architecture-list">
+                          <li class="level-3">items: <span class="type-string">string</span></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="response-exemples btn-group">
+      <ul class="nav nav-tabs" id="ImageTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active button bg-danger border-danger all-400 btn" data-group="Image" data-value="Image-200" id="Image-400-tab" data-bs-toggle="tab" data-bs-target="#Image-400" type="button" role="tab" aria-controls="Image-400" aria-selected="false">
+            <strong>404 Not Found</strong>
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="all{{t:exercises.count}}TabContent">
+        <div class="tab-pane fade show active" id="Image-400" role="tabpanel" aria-labelledby="Image-400-tab">
+          <pre><code class="json">{
+  "message": "The $exerciseName provided is incorrect or does not exist in the database. Try:",
+  "availableOptions": [
+    "Stiff-Legged_Barbell_Deadlift"
+  ]
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section id="item-3-1">
+  <div class="mb-5">
+    <h5 data-translate="endpoints.image_structure">{{t:endpoints.image_structure}}</h5>
+
+    <p class="description" data-translate="endpoints.image_structure_description">
+      {{t:endpoints.image_structure_description}}
+      <br>
+      <span data-translate="endpoints.image_structure_for_example">{{t:endpoints.image_structure_for_example}}</span>
+    </p>
+
+    <ul>
+      <li data-translate="endpoints.image_structure_example_1">
+        {{t:endpoints.image_structure_example_1}} <strong>"3/4 Sit-Up"</strong>:
+      </li>
+            <li class="image-example">
+        <section class="card-container">
+          <div class="card-image">
+            <img src="/page/img/3_4_Sit-Up-0.jpg" alt="First Image">
+            <div class="card-text">0.jpg</div>
+          </div>
+          <div class="card-image">
+            <img src="/page/img/3_4_Sit-Up-1.jpg" alt="Second Image">
+            <div class="card-text">1.jpg</div>
+          </div>
+        </section>
+
+        <pre><button class="copy-button"><i class="fa-solid fa-copy"></i></button><code class="bash">https://libapi.vercel.app/api/exercises/3_4_Sit-Up/0.jpg</code></pre>
+        <pre><button class="copy-button"><i class="fa-solid fa-copy"></i></button><code class="bash">https://libapi.vercel.app/api/exercises/3_4_Sit-Up/1.jpg</code></pre>
+            </li>
+
+      <li data-translate="endpoints.image_structure_example_2">
+        {{t:endpoints.image_structure_example_1}} <strong>"Stiff-Legged_Barbell_Deadlift"</strong>:
+      </li>
+            <li class="image-example">
+        <section class="card-container">
+          <div class="card-image">
+            <img src="/page/img/Stiff-Legged_Barbell_Deadlift-0.jpg" alt="First Image">
+            <div class="card-text">0.jpg</div>
+          </div>
+          <div class="card-image">
+            <img src="/page/img/Stiff-Legged_Barbell_Deadlift-1.jpg" alt="Second Image">
+            <div class="card-text">1.jpg</div>
+          </div>
+        </section>
+
+        <pre><button class="copy-button"><i class="fa-solid fa-copy"></i></button><code class="bash">https://libapi.vercel.app/api/exercises/Stiff-Legged_Barbell_Deadlift/0.jpg</code></pre>
+        <pre><button class="copy-button"><i class="fa-solid fa-copy"></i></button><code class="bash">https://libapi.vercel.app/api/exercises/Stiff-Legged_Barbell_Deadlift/1.jpg</code></pre>
+            </li>
+    </ul>
+  </div>
+</section>
+
+    </main>
+
+  <footer class="copyright text-center py-4">
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-translate="copyright">{{t:copyright}}</span>
+    </p>
+    <div class="mt-3">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="me-3" data-translate="terms.of.service">
+        {{t:terms.of.service}}
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3" data-translate="privacy.policy">
+        {{t:privacy.policy}}
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL: TERMS OF SERVICE -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="terms.title">
+            {{t:terms.title}}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          {{{terms}}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="terms.close">
+            {{t:terms.close}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PRIVACY POLICY -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="privacy.title">
+            {{t:privacy.title}}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          {{{privacy}}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="privacy.close">
+            {{t:privacy.close}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="/page/js/script.js"></script>
+    <script src="/page/js/dark-light.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>

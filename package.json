@@ -1,0 +1,18 @@
+{
+  "name": "musclelib-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.js",
+    "vercel-build": "npm run build"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "marked": "^17.0.1",
+    "path": "^0.12.7",
+    "vercel": "^50.9.6"
+  },
+  "devDependencies": {
+    "@vercel/static-build": "^2.8.28"
+  }
+}

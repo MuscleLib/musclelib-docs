@@ -1,0 +1,94 @@
+{
+  "page.title": "Documentação da API MuscleLib",
+  "navbar.brand": "API MuscleLib",
+  "page.heading": "MuscleLib API",
+  "headset.description": "Bem-vindo à documentação da API MuscleLib. Explore nossos endpoints e acesse um banco de dados completo de exercícios para potencializar suas aplicações fitness.",
+
+  "api.documentation": "Documentação da API",
+  "report.issues": "Reportar Problemas",
+
+  "exercises.count": "Exercícios",
+  "images.count": "Imagens",
+
+  "what.makes.different": "O Que Torna a MuscleLib Diferente",
+  "developer.first": "Foco no Desenvolvedor",
+  "developer.first.description": "API simples e intuitiva, fácil de integrar com qualquer linguagem ou plataforma.",
+  "restful.api": "API RESTful",
+  "restful.api.description": "Endpoints bem estruturados e previsíveis para simplificar o consumo dos dados.",
+  "high.performance": "Alta Performance",
+  "high.performance.description": "Respostas rápidas e eficientes, garantindo baixa latência.",
+  "extensive.exercise.database": "Banco de Exercícios Extenso",
+  "extensive.exercise.database.description": "Biblioteca completa de exercícios com imagens ilustrativas armazenadas em CDN para carregamento rápido.",
+  "muscle.targeting": "Foco Muscular",
+  "muscle.targeting.description": "Cada exercício inclui informações detalhadas sobre os músculos primários e secundários trabalhados.",
+  "no.api.key.required": "Sem Chave de API",
+  "no.api.key.required.description": "Acesso direto à API sem autenticação, facilitando a integração.",
+  "multilingual.support": "Suporte Multilíngue",
+  "multilingual.support.description": "Suporte a múltiplos idiomas, garantindo acessibilidade global.",
+  "open.source": "Código Aberto",
+  "open.source.description": "A MuscleLib API é open-source. Confira o código-fonte no GitHub.",
+  "free.tier": "Gratuito",
+  "free.tier.description": "Acesso gratuito para testes, sem necessidade de pagamento.",
+
+  "copyright": "MuscleLib.",
+  "terms.of.service": "Termos de Serviço",
+  "privacy.policy": "Política de Privacidade",
+
+  "terms.title": "Termos de Serviço",
+  "terms.heading": "Termos de Serviço da API MuscleLib",
+  "terms.close": "Fechar",
+
+  "privacy.title": "Política de Privacidade",
+  "privacy.heading": "Política de Privacidade da API MuscleLib",
+  "privacy.close": "Fechar",
+
+  "menu.get_started": "Primeiros Passos",
+  "menu.all_exercises": "Todos os Exercícios",
+  "menu.lang": "Idioma",
+  "menu.fields": "Campos",
+  "menu.page": "Página",
+  "menu.limit": "Limite",
+  "menu.dynamic_filters": "Filtros Dinâmicos",
+  "menu.search": "Busca",
+  "menu.exercise_images": "Imagens dos Exercícios",
+  "menu.images_structure": "Estrutura das Imagens",
+
+  "overview.description": "Comece a construir seu projeto usando a API MuscleLib",
+  "overview.base_url": "URL Base",
+  "overview.base_url_description": "Todos os endpoints utilizam a URL base. A URL base da API MuscleLib é:",
+
+  "endpoints.get_started": "Primeiros Passos",
+  "endpoints.all_exercises": "Todos os Exercícios",
+  "endpoints.all_exercises_description": "Retorna uma lista de todos os exercícios disponíveis no banco de dados. Este endpoint suporta vários parâmetros de consulta para filtros e paginação.",
+
+  "response.samples": "Exemplos de Resposta",
+
+  "endpoints.lang": "Idioma",
+  "endpoints.lang_description": "Idioma da resposta. O padrão é <code>en</code>. Valores suportados: <code>en</code>, <code>pt</code>.",
+  "endpoints.example_request": "Exemplo de Requisição:",
+
+  "endpoints.fields": "Campos",
+  "endpoints.fields_description": "Lista de campos separados por vírgula a serem retornados. Ex.: (<code>name,instructions</code>).",
+
+  "endpoints.page": "Página",
+  "endpoints.page_description": "Número da página para paginação deve ser um inteiro <code>≥ 1</code>. O padrão é <code>1</code>.",
+
+  "endpoints.limit": "Limite",
+  "endpoints.limit_description": "Número de itens por página. Deve ser um inteiro <code>≥ 1</code>. O padrão é <code>10</code>.",
+
+  "endpoints.dynamic_filters": "Filtros Dinâmicos",
+  "endpoints.dynamic_filters_description": "Aplique filtros com base nos atributos dos exercícios. Exemplo: (<code>level=expert&amp;force=push&amp;primaryMuscles=chest</code>).",
+
+  "endpoints.search": "Busca",
+  "endpoints.search_description": "Este endpoint permite buscar exercícios no banco de dados da API MuscleLib. Ele suporta diversos parâmetros para filtrar e paginar os resultados.",
+
+  "endpoints.exercise_images": "Buscar Imagens dos Exercícios",
+  "endpoints.exercise_images_description": "Este endpoint permite recuperar imagens associadas aos exercícios da API MuscleLib. Cada exercício possui suas imagens armazenadas em um diretório específico.",
+
+  "endpoints.image_structure": "Estrutura das Imagens",
+  "endpoints.image_structure_description": "As imagens dos exercícios são organizadas em pastas, onde cada pasta corresponde a um exercício. Dentro de cada pasta existem duas imagens chamadas <code>0.jpg</code> e <code>1.jpg</code>.",
+  
+  "endpoints.image_structure_for_example": "Por exemplo:",
+  "endpoints.image_structure_example_1": "Caminhos das imagens para o exercício",
+  "endpoints.image_structure_example_2": "Caminhos das imagens para o exercício"
+}

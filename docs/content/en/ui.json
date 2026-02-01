@@ -1,0 +1,94 @@
+{
+  "page.title": "MuscleLib API Documentation",
+  "navbar.brand": "MuscleLib API",
+  "page.heading": "MuscleLib API",
+  "headset.description": "Welcome to the MuscleLib API documentation. Explore our endpoints and access a comprehensive database of exercises to enhance your fitness applications.",
+
+  "api.documentation": "API Documentation",
+  "report.issues": "Report Issues",
+
+  "exercises.count": "Exercises",
+  "images.count": "Images",
+
+  "what.makes.different": "What Makes MuscleLib Different",
+  "developer.first": "Developer First",
+  "developer.first.description": "Simple and intuitive API, easy to integrate with any language or platform.",
+  "restful.api": "RESTful API",
+  "restful.api.description": "Well-structured and predictable endpoints to simplify data consumption.",
+  "high.performance": "High Performance",
+  "high.performance.description": "Fast and efficient responses, ensuring minimal latency.",
+  "extensive.exercise.database": "Extensive Exercise Database",
+  "extensive.exercise.database.description": "Comprehensive exercise library with illustrative images stored in a CDN for quick loading.",
+  "muscle.targeting": "Muscle Targeting",
+  "muscle.targeting.description": "Each exercise includes detailed information about the primary and secondary muscles worked.",
+  "no.api.key.required": "No API Key Required",
+  "no.api.key.required.description": "Direct access to the API without authentication, making integration hassle-free.",
+  "multilingual.support": "Multilingual Support",
+  "multilingual.support.description": "Support for multiple languages, ensuring global accessibility.",
+  "open.source": "Open Source",
+  "open.source.description": "MuscleLib API is open-source. Check out the source code on github.",
+  "free.tier": "Free",
+  "free.tier.description": "Free access for testing, no payment required.",
+
+  "copyright": "MuscleLib.",
+  "terms.of.service": "Terms of Service",
+  "privacy.policy": "Privacy Policy",
+
+  "terms.title": "Terms of Service",
+  "terms.heading": "MuscleLib API Terms of Service",
+  "terms.close": "Close",
+
+  "privacy.title": "Privacy Policy",
+  "privacy.heading": "MuscleLib API Privacy Policy",
+  "privacy.close": "Close",
+
+  "menu.get_started": "Get Started",
+  "menu.all_exercises": "All Exercises",
+  "menu.lang": "Lang",
+  "menu.fields": "Fields",
+  "menu.page": "Page",
+  "menu.limit": "Limit",
+  "menu.dynamic_filters": "Dynamic Filters",
+  "menu.search": "Search",
+  "menu.exercise_images": "Exercise Images",
+  "menu.images_structure": "Images Structure",
+
+  "overview.description": "Start building your project using the MuscleLib API",
+  "overview.base_url": "Base URL",
+  "overview.base_url_description": "All of the endpoints are prefixed with the base URL. The base URL for the MuscleLib API is:",
+
+  "endpoints.get_started": "Get Started",
+  "endpoints.all_exercises": "All Exercises",
+  "endpoints.all_exercises_description": "Retrieve a list of all exercises available in the database. This endpoint supports various query parameters for filtering and pagination.",
+
+  "response.samples": "Response Samples",
+
+  "endpoints.lang": "Lang",
+  "endpoints.lang_description": "Language for response. Default is <code>en</code>. Supported values: <code>en</code>, <code>pt</code>.",
+  "endpoints.example_request": "Example Request:",
+
+  "endpoints.fields": "Fields",
+  "endpoints.fields_description": "Comma-separated list of fields to return e.g.: (<code>name,instructions</code>).",
+
+  "endpoints.page": "Page",
+  "endpoints.page_description": "Page number for pagination must be an integer <code>≥ 1</code>. Default is <code>1</code>.",
+
+  "endpoints.limit": "Limit",
+  "endpoints.limit_description": "Number of items to return per page. Must be an integer <code>≥ 1</code>. Default is <code>10</code>.",
+
+  "endpoints.dynamic_filters": "Dynamic Filters",
+  "endpoints.dynamic_filters_description": "Apply filters based on exercise attributes. Example: (<code>level=expert&amp;force=push&amp;primaryMuscles=chest</code>).",
+
+  "endpoints.search": "Search",
+  "endpoints.search_description": "The endpoint allows users to search for exercises in the MuscleLib API database. This endpoint supports various query parameters to filter and paginate the results, making the search more efficient and personalized.",
+
+  "endpoints.exercise_images": "Get Exercise Images",
+  "endpoints.exercise_images_description": "The endpoint allows users to retrieve images associated with exercises from the MuscleLib API. Each exercise has its images stored in a specific directory.",
+
+  "endpoints.image_structure": "Image Structure",
+  "endpoints.image_structure_description": "Exercise images are organized in folders, where each folder corresponds to an exercise. Inside each folder, there are two images named <code>0.jpg</code> and <code>1.jpg</code>.",
+  
+  "endpoints.image_structure_for_example": "For example:",
+  "endpoints.image_structure_example_1": "Image paths for the exercise",
+  "endpoints.image_structure_example_2": "Image paths for the exercise"
+}

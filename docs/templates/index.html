@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-translate="page.title">{{t:page.title}}</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/page/css/docs.css">
+  <link href="/page/css/start.css" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+  <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light docs-topbar">
+    <div class="container-fluid navbar-docs">
+      <div class="navbar-left">
+        <a class="navbar-brand docs-brand" href="/{{lang}}/" aria-label="MuscleLib">
+          <img
+            src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
+            data-logo-light="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769911366095.svg"
+            alt="MuscleLib logo"
+            class="brand-logo"
+          >
+        </a>
+      </div>
+
+      <div class="navbar-actions">
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.lang}}">
+            <i class="bi bi-translate"></i>
+            <span data-selected-flag>{{lang_flag}}</span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end docs-dropdown" data-lang-select style="padding: 5px;">
+            <li>
+              <a class="dropdown-item" href="/pt/" data-lang="pt">
+                <img src="/page/img/br.svg" width="25"> Português
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/en/" data-lang="en">
+                <img src="/page/img/us.svg" width="25"> English
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+            <i data-theme-icon class="bi bi-sun"></i>
+            <span data-theme-text class="d-none d-sm-inline">Light</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end theme-select-box docs-dropdown" aria-labelledby="themeToggle" style="padding: 5px;">
+            <li><button class="dropdown-item theme-select-text" data-theme="light"><i class="bi bi-sun"></i> Light</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="dark"><i class="bi bi-moon-stars"></i> Dark</button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="auto"><i class="bi bi-circle-half"></i> Auto</button></li>
+          </ul>
+        </div>
+
+        <a class="btn docs-action-btn docs-icon-btn" href="{{github_url}}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container start-hero">
+    <div class="starter-template">
+      <h1 data-translate="page.heading">{{t:page.heading}}</h1>
+
+      <div class="lead">
+        <p data-translate="headset.description">{{t:headset.description}}</p>
+      </div>
+
+      <div class="start-links">
+        <div>
+          <a role="button" class="btn btn-outline-info" href="/{{lang}}/docs" target="_parent" data-translate="api.documentation">
+            <i class="bi bi-database"></i> {{t:api.documentation}}
+          </a>
+          <a role="button" class="btn btn-outline-danger" href="{{issues_url}}" target="_blank" data-translate="report.issues">
+            <i class="bi bi-exclamation-circle"></i> {{t:report.issues}}
+          </a>
+        </div>
+      </div>
+
+      <section class="start-stats">
+        <div class="container text-center">
+          <div class="row row-cols-2">
+            <h2 class="col grid">
+              800+
+              <span data-translate="exercises.count">{{t:exercises.count}}</span>
+            </h2>
+            <h2 class="col grid">
+              1000+
+              <span data-translate="images.count">{{t:images.count}}</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container text-center py-5">
+          <h2 class="mb-4" data-translate="what.makes.different">{{t:what.makes.different}}</h2>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-code-slash"></i>
+                <h4 class="mt-3" data-translate="developer.first">{{t:developer.first}}</h4>
+                <p class="text-secondary" data-translate="developer.first.description">{{t:developer.first.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-diagram-3"></i>
+                <h4 class="mt-3" data-translate="restful.api">{{t:restful.api}}</h4>
+                <p class="text-secondary" data-translate="restful.api.description">{{t:restful.api.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-speedometer2"></i>
+                <h4 class="mt-3" data-translate="high.performance">{{t:high.performance}}</h4>
+                <p class="text-secondary" data-translate="high.performance.description">{{t:high.performance.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-collection"></i>
+                <h4 class="mt-3" data-translate="extensive.exercise.database">{{t:extensive.exercise.database}}</h4>
+                <p class="text-secondary" data-translate="extensive.exercise.database.description">{{t:extensive.exercise.database.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-bullseye"></i>
+                <h4 class="mt-3" data-translate="muscle.targeting">{{t:muscle.targeting}}</h4>
+                <p class="text-secondary" data-translate="muscle.targeting.description">{{t:muscle.targeting.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-unlock"></i>
+                <h4 class="mt-3" data-translate="no.api.key.required">{{t:no.api.key.required}}</h4>
+                <p class="text-secondary" data-translate="no.api.key.required.description">{{t:no.api.key.required.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-translate"></i>
+                <h4 class="mt-3" data-translate="multilingual.support">{{t:multilingual.support}}</h4>
+                <p class="text-secondary" data-translate="multilingual.support.description">{{t:multilingual.support.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-github"></i>
+                <h4 class="mt-3" data-translate="open.source">{{t:open.source}}</h4>
+                <p class="text-secondary" data-translate="open.source.description">{{t:open.source.description}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="feature-box">
+                <i class="bi bi-gift"></i>
+                <h4 class="mt-3" data-translate="free.tier">{{t:free.tier}}</h4>
+                <p class="text-secondary" data-translate="free.tier.description">{{t:free.tier.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <footer class="copyright text-center py-4">
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-translate="copyright">{{t:copyright}}</span>
+    </p>
+    <div class="mt-3">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="me-3" data-translate="terms.of.service">
+        {{t:terms.of.service}}
+      </a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3" data-translate="privacy.policy">
+        {{t:privacy.policy}}
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL: TERMS OF SERVICE -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="terms.title">
+            {{t:terms.title}}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          {{{terms}}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="terms.close">
+            {{t:terms.close}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PRIVACY POLICY -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content card border-info">
+        <div class="modal-header">
+          <h5 class="modal-title" data-translate="privacy.title">
+            {{t:privacy.title}}
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          {{{privacy}}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="privacy.close">
+            {{t:privacy.close}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/page/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/page/js/dark-light.js"></script>
+</body>
+</html>
