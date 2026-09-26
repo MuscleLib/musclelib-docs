@@ -1,7 +1,7 @@
 # MuscleLib API – Política de Privacidad
 
 ## 1. Recopilación de datos
-La API MuscleLib **no recopila, almacena ni procesa datos personales de los usuarios.
+La API MuscleLib **no recopila, almacena ni procesa datos personales de los usuarios.**
 
 ## 2. Cookies
 Las cookies se utilizan únicamente para almacenar:
