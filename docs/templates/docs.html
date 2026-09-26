@@ -33,12 +33,12 @@
         <div class="dropdown">
           <button class="btn docs-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.lang}}">
             <i class="bi bi-translate"></i>
-            <span data-selected-flag>{{lang_flag}}</span>
+            <span class="language-code">{{lang}}</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end docs-dropdown" data-lang-select style="padding: 5px;">
-            <li><a class="dropdown-item" href="/pt/docs" data-lang="pt"><img src="/page/img/br.svg" width="25"> Português</a></li>
-            <li><a class="dropdown-item" href="/es/docs" data-lang="es"><img src="/page/img/es.svg" width="25"> Español</a></li>
-            <li><a class="dropdown-item" href="/en/docs" data-lang="en"><img src="/page/img/us.svg" width="25"> English</a></li>
+            <li><a class="dropdown-item" href="/pt/docs" data-lang="pt"><span class="language-option-code">PT</span> Português</a></li>
+            <li><a class="dropdown-item" href="/es/docs" data-lang="es"><span class="language-option-code">ES</span> Español</a></li>
+            <li><a class="dropdown-item" href="/en/docs" data-lang="en"><span class="language-option-code">EN</span> English</a></li>
           </ul>
         </div>
         <div class="dropdown">
@@ -255,10 +255,7 @@
               </div>
               <div class="tab-pane fade" id="Get-400" role="tabpanel" aria-labelledby="Get-400-tab">
                 <pre><code class="json">
-  {
-    "message": "Error fetching exercises.",
-    "error": "Operation `exercises.distinct()` buffering timed out after 10000ms"
-  }
+{{{example_get_400}}}
                 </code></pre>
               </div>
             </div>
@@ -274,12 +271,12 @@
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{t:menu.lang}}Link" aria-expanded="false" aria-controls="{{t:menu.lang}}Link">
-                <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?lang=en</span>
+                <span class="badge text-bg-success text-dark"><strong>GET</strong></span><span class="router-get">/exercises?lang={{lang}}</span>
               </button>
             </h2>
             <div id="{{t:menu.lang}}Link" class="accordion-collapse collapse">
               <div class="accordion-body selectBox" onclick="selectText(this)">
-                <p class="link">https://libapi.vercel.app/api/exercises?lang=en</p>
+                <p class="link">https://libapi.vercel.app/api/exercises?lang={{lang}}</p>
               </div>
             </div>
           </div>
