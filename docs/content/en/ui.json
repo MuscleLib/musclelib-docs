@@ -64,7 +64,7 @@
   "response.samples": "Response Samples",
 
   "endpoints.lang": "Lang",
-  "endpoints.lang_description": "Language for response. Default is <code>en</code>. Supported values: <code>en</code>, <code>pt</code>.",
+  "endpoints.lang_description": "Language for response. Default is <code>en</code>. Supported values: <code>en</code>, <code>pt</code>, <code>es</code>.",
   "endpoints.example_request": "Example Request:",
 
   "endpoints.fields": "Fields",
