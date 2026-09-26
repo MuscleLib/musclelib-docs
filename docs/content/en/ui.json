@@ -64,7 +64,7 @@
   "response.samples": "Response Samples",
 
   "endpoints.lang": "Lang",
-  "endpoints.lang_description": "Language for response. Default is <code>en</code>. Supported values: <code>en</code>, <code>pt</code>, <code>es</code>.",
+  "endpoints.lang_description": "Language for response. Default is <code>en</code>. Supported values: <code>en</code>, <code>pt</code>, <code>es</code>. If omitted, the API can use the <code>Accept-Language</code> header.",
   "endpoints.example_request": "Example Request:",
 
   "endpoints.fields": "Fields",
