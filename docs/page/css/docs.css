@@ -126,6 +126,34 @@ header {
   font-size: 1.1rem;
 }
 
+.language-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.15rem;
+  height: 1.7rem;
+  padding: 0 0.45rem;
+  border-radius: 7px;
+  background: var(--docs-code-bg);
+  color: var(--docs-text);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.language-option-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  margin-right: 0.45rem;
+  color: var(--docs-muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
 .docs-action-btn {
   display: inline-flex;
   align-items: center;
@@ -158,6 +186,10 @@ header {
 
 .docs-dropdown .dropdown-item {
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.55rem 0.7rem;
 }
 
 .docs-action-btn.dropdown-toggle::after {
