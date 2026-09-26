@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
 const DIST = path.join(ROOT, "dist");
 
-const LANGS = ["en", "pt"];
+const LANGS = ["en", "pt", "es"];
 
 const TEMPLATES_DIR = path.join(DOCS, "templates");
 const CONTENT_DIR = path.join(DOCS, "content");
@@ -126,7 +126,9 @@ for (const lang of LANGS) {
     lang_flag:
       lang === "pt"
         ? '<img src="/page/img/br.svg" width="20" height="20" alt="" aria-hidden="true">'
-        : '<img src="/page/img/us.svg" width="20" height="20" alt="" aria-hidden="true">',
+        : lang === "es"
+          ? '<img src="/page/img/es.svg" width="20" height="20" alt="" aria-hidden="true">'
+          : '<img src="/page/img/us.svg" width="20" height="20" alt="" aria-hidden="true">',
     ui,
     terms,
     privacy,
