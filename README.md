@@ -50,5 +50,5 @@ The deployment is fully static, and `vercel.json` defines:
 ## Contributing
 
 * Edit templates in `docs/templates/`
-* Update texts in `docs/content/en` and `docs/content/pt`
+* Update texts in `docs/content/en`, `docs/content/pt`, and `docs/content/es`
 * Run `npm run build` to validate the output in `dist/`
