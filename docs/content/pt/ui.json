@@ -64,7 +64,7 @@
   "response.samples": "Exemplos de Resposta",
 
   "endpoints.lang": "Idioma",
-  "endpoints.lang_description": "Idioma da resposta. O padrão é <code>en</code>. Valores suportados: <code>en</code>, <code>pt</code>.",
+  "endpoints.lang_description": "Idioma da resposta. O padrão é <code>en</code>. Valores suportados: <code>en</code>, <code>pt</code>, <code>es</code>.",
   "endpoints.example_request": "Exemplo de Requisição:",
 
   "endpoints.fields": "Campos",
