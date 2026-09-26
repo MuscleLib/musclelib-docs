@@ -30,7 +30,7 @@ npm install
 npm run build
 ````
 
-Open `dist/en/index.html` (or `dist/pt/index.html`), or serve `dist/` with a static server:
+Open `dist/en/index.html`, `dist/pt/index.html`, or `dist/es/index.html`, or serve `dist/` with a static server:
 
 ```bash
 npx serve dist
