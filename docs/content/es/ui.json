@@ -53,7 +53,7 @@
   "endpoints.all_exercises_description": "Obtiene una lista de todos los ejercicios disponibles en la base de datos. Este endpoint admite varios parámetros de consulta para filtros y paginación.",
   "response.samples": "Ejemplos de respuesta",
   "endpoints.lang": "Idioma",
-  "endpoints.lang_description": "Idioma de la respuesta. El valor predeterminado es <code>en</code>. Valores admitidos: <code>en</code>, <code>pt</code>, <code>es</code>.",
+  "endpoints.lang_description": "Idioma de la respuesta. El valor predeterminado es <code>en</code>. Valores admitidos: <code>en</code>, <code>pt</code>, <code>es</code>. Si se omite, la API puede utilizar el encabezado <code>Accept-Language</code>.",
   "endpoints.example_request": "Ejemplo de solicitud:",
   "endpoints.fields": "Campos",
   "endpoints.fields_description": "Lista de campos separados por comas que se devolverán. Ej.: (<code>name,instructions</code>).",
