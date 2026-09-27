@@ -45,6 +45,13 @@
   "menu.get_started": "Get Started",
   "menu.all_exercises": "All Exercises",
   "menu.lang": "Lang",
+    "menu.navigation": "Navigation",
+    "menu.open_navigation": "Open navigation",
+    "menu.close_navigation": "Close navigation",
+  "menu.theme": "Theme",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+  "theme.auto": "Auto",
   "menu.fields": "Fields",
   "menu.page": "Page",
   "menu.limit": "Limit",
@@ -90,5 +97,10 @@
   
   "endpoints.image_structure_for_example": "For example:",
   "endpoints.image_structure_example_1": "Image paths for the exercise",
-  "endpoints.image_structure_example_2": "Image paths for the exercise"
+  "endpoints.image_structure_example_2": "Image paths for the exercise",
+
+  "not_found.title": "404 Not Found",
+  "not_found.heading": "FILE NOT FOUND!",
+  "not_found.message": "The page you're looking for isn't here.",
+  "not_found.home": "return to beginning"
 }

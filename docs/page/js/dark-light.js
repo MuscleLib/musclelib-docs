@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setTheme(theme) {
     const body = document.body;
-    const themeIcon = document.querySelectorAll('[data-theme-icon]');
-    const themeText = document.querySelectorAll('[data-theme-text]');
 
     // Remove classes de tema para evitar conflitos
     body.classList.remove('light-theme', 'dark-theme');
@@ -28,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Salva o tema no localStorage
     localStorage.setItem('theme', theme);
+    updateThemeSelection(theme);
   }
 
   function applySystemTheme() {
@@ -44,7 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('[data-theme-text]').forEach(text => {
-      text.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+      text.textContent = text.dataset[theme] || theme;
+    });
+  }
+
+  function updateThemeSelection(theme) {
+    document.querySelectorAll('[data-theme]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.theme === theme));
     });
   }
 

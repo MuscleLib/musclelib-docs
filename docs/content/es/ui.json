@@ -38,6 +38,13 @@
   "menu.get_started": "Primeros pasos",
   "menu.all_exercises": "Todos los ejercicios",
   "menu.lang": "Idioma",
+    "menu.navigation": "Navegación",
+    "menu.open_navigation": "Abrir navegación",
+    "menu.close_navigation": "Cerrar navegación",
+  "menu.theme": "Tema",
+  "theme.light": "Claro",
+  "theme.dark": "Oscuro",
+  "theme.auto": "Automático",
   "menu.fields": "Campos",
   "menu.page": "Página",
   "menu.limit": "Límite",
@@ -71,5 +78,10 @@
   "endpoints.image_structure_description": "Las imágenes de los ejercicios están organizadas en carpetas, donde cada carpeta corresponde a un ejercicio. Dentro de cada carpeta hay dos imágenes llamadas <code>0.jpg</code> y <code>1.jpg</code>.",
   "endpoints.image_structure_for_example": "Por ejemplo:",
   "endpoints.image_structure_example_1": "Rutas de imágenes para el ejercicio",
-  "endpoints.image_structure_example_2": "Rutas de imágenes para el ejercicio"
+  "endpoints.image_structure_example_2": "Rutas de imágenes para el ejercicio",
+
+  "not_found.title": "Página no encontrada",
+  "not_found.heading": "¡PÁGINA NO ENCONTRADA!",
+  "not_found.message": "La dirección que buscas no existe o se ha movido.",
+  "not_found.home": "volver al inicio"
 }

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/css/flag-icons.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="/page/css/docs.css">
 </head>
@@ -15,10 +16,10 @@
     <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light docs-topbar">
     <div class="container-fluid navbar-docs">
       <div class="navbar-left">
-        <button class="btn docs-icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNested" aria-label="Open navigation">
-          <i class="bi bi-list"></i>
+        <button class="btn docs-icon-btn docs-menu-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNested" aria-controls="offcanvasNested" aria-expanded="false" aria-label="{{t:menu.open_navigation}}" title="{{t:menu.open_navigation}}">
+          <i class="bi bi-list" aria-hidden="true"></i>
         </button>
-        <a class="navbar-brand docs-brand" href="#" aria-label="MuscleLib">
+        <a class="navbar-brand docs-brand" href="/{{lang}}/" aria-label="MuscleLib">
           <img
             src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
             data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
@@ -30,26 +31,25 @@
       </div>
 
       <div class="navbar-actions">
-        <div class="dropdown">
-          <button class="btn docs-action-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.lang}}">
-            <i class="bi bi-translate"></i>
-            <span class="language-code">{{lang}}</span>
+        <div class="dropdown language-dropdown">
+          <button class="btn docs-icon-btn language-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.lang}}" title="{{t:menu.lang}}">
+            <span class="language-globe" aria-hidden="true"><span class="fi" data-current-country-flag></span></span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end docs-dropdown" data-lang-select style="padding: 5px;">
-            <li><a class="dropdown-item" href="/pt/docs" data-lang="pt"><span class="language-option-code">PT</span> Português</a></li>
-            <li><a class="dropdown-item" href="/es/docs" data-lang="es"><span class="language-option-code">ES</span> Español</a></li>
-            <li><a class="dropdown-item" href="/en/docs" data-lang="en"><span class="language-option-code">EN</span> English</a></li>
+          <ul class="dropdown-menu dropdown-menu-end docs-dropdown language-menu">
+            <li><a class="dropdown-item" href="/pt/docs" hreflang="pt" lang="pt" data-lang="pt" aria-label="Português"><span class="fi fi-br language-flag" aria-hidden="true"></span><span>Português</span><i class="bi bi-check2 language-check" aria-hidden="true"></i></a></li>
+            <li><a class="dropdown-item" href="/es/docs" hreflang="es" lang="es" data-lang="es" aria-label="Español"><span class="fi fi-es language-flag" aria-hidden="true"></span><span>Español</span><i class="bi bi-check2 language-check" aria-hidden="true"></i></a></li>
+            <li><a class="dropdown-item" href="/en/docs" hreflang="en" lang="en" data-lang="en" aria-label="English"><span class="fi fi-us language-flag" aria-hidden="true"></span><span>English</span><i class="bi bi-check2 language-check" aria-hidden="true"></i></a></li>
           </ul>
         </div>
         <div class="dropdown">
-          <button class="btn docs-action-btn dropdown-toggle" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+          <button class="btn docs-action-btn dropdown-toggle" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{t:menu.theme}}" title="{{t:menu.theme}}">
             <i data-theme-icon class="bi bi-sun"></i>
-            <span data-theme-text class="d-none d-sm-inline">Light</span>
+            <span data-theme-text data-light="{{t:theme.light}}" data-dark="{{t:theme.dark}}" data-auto="{{t:theme.auto}}" class="d-none d-sm-inline">{{t:theme.light}}</span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end theme-select-box docs-dropdown" aria-labelledby="themeToggle" style="padding: 5px;">
-            <li><button class="dropdown-item theme-select-text" data-theme="light"><i class="bi bi-sun"></i> Light</button></li>
-            <li><button class="dropdown-item theme-select-text" data-theme="dark"><i class="bi bi-moon-stars"></i> Dark</button></li>
-            <li><button class="dropdown-item theme-select-text" data-theme="auto"><i class="bi bi-circle-half"></i> Auto</button></li>
+          <ul class="dropdown-menu dropdown-menu-end theme-select-box theme-menu docs-dropdown" aria-labelledby="themeToggle">
+            <li><button class="dropdown-item theme-select-text" data-theme="light" aria-pressed="false"><i class="bi bi-sun"></i><span>{{t:theme.light}}</span><i class="bi bi-check2 theme-check" aria-hidden="true"></i></button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="dark" aria-pressed="false"><i class="bi bi-moon-stars"></i><span>{{t:theme.dark}}</span><i class="bi bi-check2 theme-check" aria-hidden="true"></i></button></li>
+            <li><button class="dropdown-item theme-select-text" data-theme="auto" aria-pressed="false"><i class="bi bi-circle-half"></i><span>{{t:theme.auto}}</span><i class="bi bi-check2 theme-check" aria-hidden="true"></i></button></li>
           </ul>
         </div>
         <a class="btn docs-action-btn docs-icon-btn" href="https://github.com/MuscleLib" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -59,18 +59,22 @@
     </div>
   </nav>
 
-  <div class="offcanvas offcanvas-start" id="offcanvasNested" tabindex="-1">
+  <div class="offcanvas offcanvas-start docs-nav-drawer" id="offcanvasNested" tabindex="-1" aria-label="{{t:menu.navigation}}">
     <div class="offcanvas-header">
-      <div class="d-flex align-items-center gap-2">
+      <div class="offcanvas-brand">
+        <a href="/{{lang}}/" aria-label="MuscleLib home">
         <img
           src="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
           data-logo-dark="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769382801270.svg"
           data-logo-light="https://n519x3fvhoado5zf.public.blob.vercel-storage.com/avatars/69651f2b148c75323c2a9c7e/1769911366095.svg"
-          alt="MuscleLib logo"
+          alt=""
           class="brand-logo"
         >
+        </a>
       </div>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn docs-icon-btn drawer-close" data-bs-dismiss="offcanvas" aria-label="{{t:menu.close_navigation}}" title="{{t:menu.close_navigation}}">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
     </div>
     <div class="offcanvas-body">
       <nav class="nested-nav">
@@ -979,58 +983,14 @@
       <span data-translate="copyright">{{t:copyright}}</span>
     </p>
     <div class="mt-3">
-      <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="me-3" data-translate="terms.of.service">
+      <a href="/{{lang}}/terms" class="me-3" data-translate="terms.of.service">
         {{t:terms.of.service}}
       </a>
-      <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3" data-translate="privacy.policy">
+      <a href="/{{lang}}/privacy" class="me-3" data-translate="privacy.policy">
         {{t:privacy.policy}}
       </a>
     </div>
   </footer>
-
-  <!-- MODAL: TERMS OF SERVICE -->
-  <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content card border-info">
-        <div class="modal-header">
-          <h5 class="modal-title" data-translate="terms.title">
-            {{t:terms.title}}
-          </h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          {{{terms}}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="terms.close">
-            {{t:terms.close}}
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL: PRIVACY POLICY -->
-  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content card border-info">
-        <div class="modal-header">
-          <h5 class="modal-title" data-translate="privacy.title">
-            {{t:privacy.title}}
-          </h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          {{{privacy}}}
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" data-translate="privacy.close">
-            {{t:privacy.close}}
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
     <script src="/page/js/script.js"></script>
     <script src="/page/js/dark-light.js"></script>

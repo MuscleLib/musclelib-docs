@@ -45,6 +45,13 @@
   "menu.get_started": "Primeiros Passos",
   "menu.all_exercises": "Todos os Exercícios",
   "menu.lang": "Idioma",
+    "menu.navigation": "Navegação",
+    "menu.open_navigation": "Abrir navegação",
+    "menu.close_navigation": "Fechar navegação",
+  "menu.theme": "Tema",
+  "theme.light": "Claro",
+  "theme.dark": "Escuro",
+  "theme.auto": "Automático",
   "menu.fields": "Campos",
   "menu.page": "Página",
   "menu.limit": "Limite",
@@ -90,5 +97,10 @@
   
   "endpoints.image_structure_for_example": "Por exemplo:",
   "endpoints.image_structure_example_1": "Caminhos das imagens para o exercício",
-  "endpoints.image_structure_example_2": "Caminhos das imagens para o exercício"
+  "endpoints.image_structure_example_2": "Caminhos das imagens para o exercício",
+
+  "not_found.title": "Página não encontrada",
+  "not_found.heading": "PÁGINA NÃO ENCONTRADA!",
+  "not_found.message": "O endereço que você acessou não existe ou foi movido.",
+  "not_found.home": "voltar ao início"
 }
