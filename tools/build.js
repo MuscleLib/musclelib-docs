@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { marked } from "marked";
+import { examples } from "../docs/content/examples.js";
 
 // ===== FIX __dirname EM ESM =====
 const __filename = fileURLToPath(import.meta.url);
@@ -10,9 +11,9 @@ const __dirname = path.dirname(__filename);
 // ===== CONFIG =====
 const ROOT = path.resolve(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
-const DIST = path.join(ROOT, "dist");
+const DIST = path.resolve(process.env.DIST_DIR || path.join(ROOT, "dist"));
 
-const LANGS = ["en", "pt"];
+const LANGS = ["en", "pt", "es"];
 
 const TEMPLATES_DIR = path.join(DOCS, "templates");
 const CONTENT_DIR = path.join(DOCS, "content");
@@ -79,27 +80,25 @@ console.log("📦 Building MuscleLib Docs...\n");
 ensureDir(DIST);
 
 // Assets globais
-copyRecursive(
-  path.join(DOCS, "page"),
-  path.join(DIST, "page")
+copyRecursive(path.join(DOCS, "page"), path.join(DIST, "page"));
+
+const notFoundContext = {
+  ui: JSON.parse(read(path.join(CONTENT_DIR, "en", "ui.json"))),
+};
+const notFoundHtml = applyTemplate(
+  read(path.join(TEMPLATES_DIR, "404.html")),
+  notFoundContext,
 );
 
-copyRecursive(
-  // Keep a root 404.html because vercel.json rewrites /404 -> /404.html
-  path.join(DOCS, "page", "404.html"),
-  path.join(DIST, "404.html")
-);
+write(path.join(DIST, "404.html"), notFoundHtml);
+write(path.join(DIST, "page", "404.html"), notFoundHtml);
 
 copyRecursive(
   path.join(ASSETS_DIR, "index.html"),
-  path.join(DIST, "index.html")
+  path.join(DIST, "index.html"),
 );
 
-copyRecursive(
-  path.join(ASSETS_DIR, "docs"),
-  path.join(DIST, "docs")
-);
-
+copyRecursive(path.join(ASSETS_DIR, "docs"), path.join(DIST, "docs"));
 
 for (const lang of LANGS) {
   console.log(`🌍 Building language: ${lang}`);
@@ -108,56 +107,62 @@ for (const lang of LANGS) {
   ensureDir(outDir);
 
   // UI texts
-  const ui = JSON.parse(
-    read(path.join(CONTENT_DIR, lang, "ui.json"))
-  );
+  const ui = JSON.parse(read(path.join(CONTENT_DIR, lang, "ui.json")));
 
   // Markdown → HTML
-  const terms = marked.parse(
-    read(path.join(CONTENT_DIR, lang, "terms.md"))
-  );
+  const terms = marked.parse(read(path.join(CONTENT_DIR, lang, "terms.md")));
 
   const privacy = marked.parse(
-    read(path.join(CONTENT_DIR, lang, "privacy.md"))
+    read(path.join(CONTENT_DIR, lang, "privacy.md")),
   );
+
+  const localeExamples = examples[lang];
 
   const context = {
     lang,
-    lang_flag:
-      lang === "pt"
-        ? '<img src="/page/img/br.svg" width="20" height="20" alt="" aria-hidden="true">'
-        : '<img src="/page/img/us.svg" width="20" height="20" alt="" aria-hidden="true">',
     ui,
-    terms,
-    privacy,
+    ...Object.fromEntries(
+      Object.entries(localeExamples).map(([key, value]) => [
+        `example_${key}`,
+        value,
+      ]),
+    ),
     github_url: "https://github.com/MuscleLib",
     issues_url: "https://github.com/MuscleLib/MuscleLibAPI/issues",
     stats: {
       exercises: "800+",
-      images: "1700+"
-    }
+      images: "1700+",
+    },
   };
 
   // index.html
-  const indexTpl = read(
-    path.join(TEMPLATES_DIR, "index.html")
-  );
+  const indexTpl = read(path.join(TEMPLATES_DIR, "index.html"));
 
-  write(
-    path.join(outDir, "index.html"),
-    applyTemplate(indexTpl, context)
-  );
+  write(path.join(outDir, "index.html"), applyTemplate(indexTpl, context));
 
   // docs.html
-  const docsTpl = read(
-    path.join(TEMPLATES_DIR, "docs.html")
-  );
+  const docsTpl = read(path.join(TEMPLATES_DIR, "docs.html"));
 
-  write(
-    path.join(outDir, "docs.html"),
-    applyTemplate(docsTpl, context)
-  );
+  write(path.join(outDir, "docs.html"), applyTemplate(docsTpl, context));
+
+  const legalTpl = read(path.join(TEMPLATES_DIR, "legal.html"));
+  const legalPages = [
+    { slug: "terms", title: ui["terms.title"], content: terms },
+    { slug: "privacy", title: ui["privacy.title"], content: privacy },
+  ];
+
+  for (const page of legalPages) {
+    write(
+      path.join(outDir, `${page.slug}.html`),
+      applyTemplate(legalTpl, {
+        ...context,
+        legal_title: page.title,
+        legal_path: page.slug,
+        legal_content: page.content,
+      }),
+    );
+  }
 }
 
 console.log("\n✅ Build finished successfully!");
-console.log("➡ Output in /dist");
+console.log(`➡ Output in ${DIST}`);

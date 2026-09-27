@@ -3,6 +3,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("current-year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  const navigationDrawer = document.getElementById("offcanvasNested");
+  const navigationToggle = document.querySelector(".docs-menu-trigger");
+
+  if (navigationDrawer && navigationToggle) {
+    navigationDrawer.addEventListener("show.bs.offcanvas", () => {
+      navigationToggle.setAttribute("aria-expanded", "true");
+    });
+
+    navigationDrawer.addEventListener("hidden.bs.offcanvas", () => {
+      navigationToggle.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  const currentLanguage = document.documentElement.lang;
+  const countryFlagClass = { en: "fi-us", es: "fi-es", pt: "fi-br" };
+
+  document.querySelectorAll(".language-menu [data-lang]").forEach((link) => {
+    if (link.dataset.lang === currentLanguage) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+  document.querySelectorAll("[data-current-country-flag]").forEach((flag) => {
+    flag.classList.add(countryFlagClass[currentLanguage] || "fi-us");
+  });
+
   // Used by inline onclick="selectText(this)" in templates
   window.selectText = (element) => {
     if (!element) return;
@@ -45,32 +71,71 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Persist active sublink (left navigation)
-  const sublinks = document.querySelectorAll(".nav-link.sublink");
-  const activeLinkId = localStorage.getItem("activeLink");
+  const sectionLinks = Array.from(
+    document.querySelectorAll('.nested-link[href^="#item-"]:not([data-bs-toggle="collapse"])'),
+  );
 
-  if (activeLinkId) {
-    const activeLink = document.querySelector(`.nav-link.sublink[href="${activeLinkId}"]`);
-    if (activeLink) {
-      sublinks.forEach((link) => link.classList.remove("active"));
-      activeLink.classList.add("active");
+  const setActiveSectionLink = (link) => {
+    sectionLinks.forEach((sectionLink) => {
+      sectionLink.classList.toggle("active", sectionLink === link);
+      if (sectionLink === link) {
+        sectionLink.setAttribute("aria-current", "location");
+      } else {
+        sectionLink.removeAttribute("aria-current");
+      }
+    });
 
-      const target = document.querySelector(activeLinkId);
-      if (target) target.scrollIntoView({ behavior: "smooth" });
+    const parentCollapse = link.closest(".collapse");
+    if (
+      parentCollapse &&
+      !parentCollapse.classList.contains("show") &&
+      typeof bootstrap !== "undefined"
+    ) {
+      bootstrap.Collapse.getOrCreateInstance(parentCollapse, { toggle: false }).show();
     }
+
+    localStorage.setItem("activeLink", link.getAttribute("href"));
+  };
+
+  const activeLinkId = localStorage.getItem("activeLink");
+  const savedActiveLink = sectionLinks.find(
+    (link) => link.getAttribute("href") === activeLinkId,
+  );
+
+  if (savedActiveLink) {
+    setActiveSectionLink(savedActiveLink);
+    document.querySelector(activeLinkId)?.scrollIntoView({ behavior: "smooth" });
   }
 
-  sublinks.forEach((link) => {
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries.filter((entry) => entry.isIntersecting);
+        visibleSections.sort(
+          (first, second) => second.intersectionRatio - first.intersectionRatio,
+        );
+
+        const activeLink = sectionLinks.find(
+          (link) => link.hash === `#${visibleSections[0]?.target.id}`,
+        );
+        if (activeLink) setActiveSectionLink(activeLink);
+      },
+      { rootMargin: "-20% 0px -70% 0px", threshold: [0, 0.1, 0.25, 0.5, 1] },
+    );
+
+    sectionLinks.forEach((link) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) sectionObserver.observe(target);
+    });
+  }
+
+  sectionLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-
-      sublinks.forEach((sub) => sub.classList.remove("active"));
-      link.classList.add("active");
-
+      setActiveSectionLink(link);
       const targetId = link.getAttribute("href");
       if (!targetId) return;
 
-      localStorage.setItem("activeLink", targetId);
       const target = document.querySelector(targetId);
       if (target) target.scrollIntoView({ behavior: "smooth" });
 
