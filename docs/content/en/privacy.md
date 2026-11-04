@@ -20,8 +20,6 @@ The first-party scripts reviewed for this policy do not create or read cookies. 
 
 The site loads resources from jsDelivr, cdnjs, Google Fonts, and Vercel Blob, is hosted by Vercel, and may display example images served by the MuscleLib API. When a browser requests these resources, providers may receive technical connection information such as IP address, browser/device details, and the requested resource URL. Each provider handles this information under its own privacy policy and terms. The website code does not establish what providers retain or for how long.
 
-No analytics or advertising integration was identified in the website code reviewed for this policy. This does not make claims about independent practices of external providers.
-
 ## 5. Changes
 
 This policy may change when website functionality, storage behavior, or external services change. The current version is published on this documentation website.
