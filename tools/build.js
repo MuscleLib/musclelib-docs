@@ -155,10 +155,8 @@ for (const lang of LANGS) {
     ),
     github_url: "https://github.com/MuscleLib",
     issues_url: "https://github.com/MuscleLib/musclelib-api/issues",
-    stats_exercises: new Intl.NumberFormat(lang).format(
-      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.exercises)) ||
-    ),
-      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.images))
+    stats_exercises: new Intl.NumberFormat(lang).format(homepageStats.exercises),
+    stats_images: new Intl.NumberFormat(lang).format(homepageStats.images),
   };
 
   const indexTpl = read(path.join(TEMPLATES_DIR, "index.html"));
