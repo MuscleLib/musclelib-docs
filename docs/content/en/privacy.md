@@ -1,4 +1,4 @@
-# MuscleLib Documentation Website – Privacy Policy
+# MuscleLib API - Privacy Policy
 
 ## 1. Scope
 
