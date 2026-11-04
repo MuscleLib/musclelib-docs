@@ -35,7 +35,7 @@ function extractIds(html) {
 }
 
 function assertNoUnresolvedPlaceholders(html, file) {
-  const unresolved = html.match(/\[\[[\w.]+\]\]|\{\{\{?[\w.]+\}?\}\}?/g);
+  const unresolved = html.match(/\[\[[\w.]+\]\]|\{\{\{?[\w.:]+\}?\}\}?/g);
   if (unresolved?.length) {
     fail(
       `Unresolved template placeholders in ${file}: ${[...new Set(unresolved)].join(", ")}`,
