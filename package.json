@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node tools/build.js",
+    "build": "node tools/build.js && node tools/validate-privacy.js",
     "dev": "node tools/dev.js",
     "vercel-build": "npm run build"
   },
