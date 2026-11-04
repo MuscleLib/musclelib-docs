@@ -20,8 +20,6 @@ Los scripts propios revisados para esta política no crean ni leen cookies. Los 
 
 El sitio carga recursos de jsDelivr, cdnjs, Google Fonts y Vercel Blob, está alojado en Vercel y puede mostrar imágenes de ejemplo servidas por MuscleLib API. Al solicitar estos recursos, el navegador puede proporcionar a los servicios correspondientes información técnica de la conexión, como la dirección IP, datos del navegador y del dispositivo, y la URL del recurso solicitado. Cada proveedor trata esta información según su propia política de privacidad y sus condiciones. El código del sitio no determina qué datos conservan los proveedores ni durante cuánto tiempo.
 
-No se identificó ninguna integración de analítica o publicidad en el código del sitio revisado para esta política. Esto no constituye una afirmación sobre las prácticas independientes de los proveedores externos.
-
 ## 5. Cambios
 
 Esta política podrá cambiar cuando se modifiquen las funciones, el almacenamiento o los servicios externos del sitio. La versión vigente se publicará en este sitio de documentación.
