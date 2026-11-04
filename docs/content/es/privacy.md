@@ -1,4 +1,4 @@
-# Sitio de Documentación MuscleLib – Política de Privacidad
+# MuscleLib API - Política de Privacidad
 
 ## 1. Alcance
 
