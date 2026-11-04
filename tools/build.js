@@ -26,8 +26,8 @@ const LANGS = ["en", "pt", "es"];
 
 const TEMPLATES_DIR = path.join(DOCS, "templates");
 const CONTENT_DIR = path.join(DOCS, "content");
-// Redirect/entrypoint static pages live in docs/assets (index.html, docs/index.html, ...)
 const ASSETS_DIR = path.join(DOCS, "assets");
+const STATS_FILE = path.join(CONTENT_DIR, "stats.json");
 
 // ===== UTILS =====
 function ensureDir(dir) {
@@ -61,21 +61,38 @@ function copyRecursive(src, dest) {
   }
 }
 
+function loadStats() {
+  const stats = JSON.parse(read(STATS_FILE));
+
+  for (const key of ["exercises", "images"]) {
+    if (!Number.isSafeInteger(stats[key]) || stats[key] < 0) {
+      throw new Error(`Invalid homepage statistic: ${key}`);
+    }
+  }
+
+  if (
+    typeof stats.verifiedAt !== "string" ||
+    typeof stats.sourceRepository !== "string" ||
+    typeof stats.sourceCommit !== "string"
+  ) {
+    throw new Error("Homepage statistics must include verification metadata.");
+  }
+
+  return stats;
+}
+
 // ===== TEMPLATE ENGINE =====
 function applyTemplate(template, ctx) {
   let output = template;
 
-  // {{{raw}}}
   output = output.replace(/\{\{\{(\w+)\}\}\}/g, (_, key) => {
     return ctx[key] ?? "";
   });
 
-  // {{t:key}}
   output = output.replace(/\{\{t:([\w.]+)\}\}/g, (_, key) => {
     return ctx.ui[key] ?? `[[${key}]]`;
   });
 
-  // {{var}}
   output = output.replace(/\{\{(\w+)\}\}/g, (_, key) => {
     return ctx[key] ?? "";
   });
@@ -84,15 +101,15 @@ function applyTemplate(template, ctx) {
 }
 
 // ===== BUILD =====
-console.log("📦 Building MuscleLib Docs...\n");
+console.log("Building MuscleLib Docs...\n");
 
-// Always generate from a clean output directory to prevent stale files.
 if (fs.existsSync(DIST)) {
   fs.rmSync(DIST, { recursive: true, force: true });
 }
 ensureDir(DIST);
 
-// Assets globais
+const homepageStats = loadStats();
+
 copyRecursive(path.join(DOCS, "page"), path.join(DIST, "page"));
 
 const notFoundContext = {
@@ -114,17 +131,13 @@ copyRecursive(
 copyRecursive(path.join(ASSETS_DIR, "docs"), path.join(DIST, "docs"));
 
 for (const lang of LANGS) {
-  console.log(`🌍 Building language: ${lang}`);
+  console.log(`Building language: ${lang}`);
 
   const outDir = path.join(DIST, lang);
   ensureDir(outDir);
 
-  // UI texts
   const ui = JSON.parse(read(path.join(CONTENT_DIR, lang, "ui.json")));
-
-  // Markdown → HTML
   const terms = marked.parse(read(path.join(CONTENT_DIR, lang, "terms.md")));
-
   const privacy = marked.parse(
     read(path.join(CONTENT_DIR, lang, "privacy.md")),
   );
@@ -141,21 +154,17 @@ for (const lang of LANGS) {
       ]),
     ),
     github_url: "https://github.com/MuscleLib",
-    issues_url: "https://github.com/MuscleLib/MuscleLibAPI/issues",
-    stats: {
-      exercises: "800+",
-      images: "1700+",
-    },
+    issues_url: "https://github.com/MuscleLib/musclelib-api/issues",
+    stats_exercises: new Intl.NumberFormat(lang).format(
+      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.exercises)) ||
+    ),
+      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.images))
   };
 
-  // index.html
   const indexTpl = read(path.join(TEMPLATES_DIR, "index.html"));
-
   write(path.join(outDir, "index.html"), applyTemplate(indexTpl, context));
 
-  // docs.html
   const docsTpl = read(path.join(TEMPLATES_DIR, "docs.html"));
-
   write(path.join(outDir, "docs.html"), applyTemplate(docsTpl, context));
 
   const legalTpl = read(path.join(TEMPLATES_DIR, "legal.html"));
@@ -203,10 +212,19 @@ function validateGeneratedPages() {
     if (!homepage.includes(`href="/${lang}/docs"`)) {
       throw new Error(`Missing documentation navigation for language: ${lang}`);
     }
+
+    if (
+      !homepage.includes(`href="https://github.com/MuscleLib/musclelib-api/issues"`) ||
+      !homepage.includes("rel=\"noopener noreferrer\"") ||
+      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.exercises)) ||
+      !homepage.includes(new Intl.NumberFormat(lang).format(homepageStats.images))
+    ) {
+      throw new Error(`Homepage issue link or statistics validation failed for: ${lang}`);
+    }
   }
 }
 
 validateGeneratedPages();
 
-console.log("\n✅ Build finished successfully!");
-console.log(`➡ Output in ${DIST}`);
+console.log("\nBuild finished successfully!");
+console.log(`Output in ${DIST}`);
