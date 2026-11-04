@@ -34,6 +34,21 @@ function extractIds(html) {
   );
 }
 
+function validateUniqueIds(html, file) {
+  const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1]);
+  const seen = new Set();
+  const duplicates = new Set();
+
+  for (const id of ids) {
+    if (seen.has(id)) duplicates.add(id);
+    seen.add(id);
+  }
+
+  if (duplicates.size) {
+    fail(`Duplicate HTML IDs in ${file}: ${[...duplicates].join(", ")}`);
+  }
+}
+
 function assertNoUnresolvedPlaceholders(html, file) {
   const unresolved = html.match(/\[\[[\w.]+\]\]|\{\{\{?[\w.:]+\}?\}\}?/g);
   if (unresolved?.length) {
@@ -154,6 +169,7 @@ for (const lang of LANGS) {
     }
 
     assertNoUnresolvedPlaceholders(html, relativePath);
+    validateUniqueIds(html, relativePath);
     validateInternalLinks(html, relativePath, `/${lang}/${page}`);
 
     if (page === "docs.html") {
@@ -175,6 +191,7 @@ if (!/<html\b[^>]*\blang=["']en["']/i.test(notFoundHtml)) {
   fail("Invalid or missing lang attribute in 404.html");
 }
 assertNoUnresolvedPlaceholders(notFoundHtml, "404.html");
+validateUniqueIds(notFoundHtml, "404.html");
 validateInternalLinks(notFoundHtml, "404.html", "/404");
 
 console.log(
