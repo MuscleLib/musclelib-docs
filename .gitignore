@@ -138,3 +138,6 @@ out
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vercel
+
+# Generated production output (created by npm run build)
+/dist/

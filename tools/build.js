@@ -13,6 +13,15 @@ const ROOT = path.resolve(__dirname, "..");
 const DOCS = path.join(ROOT, "docs");
 const DIST = path.resolve(process.env.DIST_DIR || path.join(ROOT, "dist"));
 
+if (
+  DIST === ROOT ||
+  DIST === DOCS ||
+  DIST.startsWith(`${DOCS}${path.sep}`) ||
+  ROOT.startsWith(`${DIST}${path.sep}`)
+) {
+  throw new Error(`Unsafe build output directory: ${DIST}`);
+}
+
 const LANGS = ["en", "pt", "es"];
 
 const TEMPLATES_DIR = path.join(DOCS, "templates");
@@ -77,6 +86,10 @@ function applyTemplate(template, ctx) {
 // ===== BUILD =====
 console.log("📦 Building MuscleLib Docs...\n");
 
+// Always generate from a clean output directory to prevent stale files.
+if (fs.existsSync(DIST)) {
+  fs.rmSync(DIST, { recursive: true, force: true });
+}
 ensureDir(DIST);
 
 // Assets globais
@@ -163,6 +176,37 @@ for (const lang of LANGS) {
     );
   }
 }
+
+function validateGeneratedPages() {
+  for (const lang of LANGS) {
+    const outDir = path.join(DIST, lang);
+
+    for (const page of ["index.html", "docs.html", "terms.html", "privacy.html"]) {
+      const file = path.join(outDir, page);
+
+      if (!fs.existsSync(file)) {
+        throw new Error(`Missing generated page: ${lang}/${page}`);
+      }
+
+      const html = read(file);
+      const languageAttribute = new RegExp(
+        `<html\\b[^>]*\\blang=["']${lang}["']`,
+        "i",
+      );
+
+      if (!languageAttribute.test(html)) {
+        throw new Error(`Invalid or missing lang attribute in ${lang}/${page}`);
+      }
+    }
+
+    const homepage = read(path.join(outDir, "index.html"));
+    if (!homepage.includes(`href="/${lang}/docs"`)) {
+      throw new Error(`Missing documentation navigation for language: ${lang}`);
+    }
+  }
+}
+
+validateGeneratedPages();
 
 console.log("\n✅ Build finished successfully!");
 console.log(`➡ Output in ${DIST}`);

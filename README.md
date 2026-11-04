@@ -28,4 +28,6 @@ Abra <http://localhost:4173>. Ao salvar mudanças em `docs/`, o site é atualiza
 npm run build
 ```
 
-O site pronto fica em `dist/`. O deploy da Vercel executa esse build automaticamente.
+O site pronto fica em `dist/`. Esse diretório é gerado do zero a cada build e não deve ser versionado. A fonte oficial permanece em `docs/`.
+
+O deploy da Vercel executa `npm run build` automaticamente e publica o conteúdo gerado em `dist/`.
